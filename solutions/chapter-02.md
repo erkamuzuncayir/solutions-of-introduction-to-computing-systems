@@ -129,3 +129,98 @@
 		1. 111 1111 = 127
 27. The LC-3, a 16-bit machine, adds the two 2’s complement numbers 0101010101010101 and 0011100111001111, producing 1000111100100100. Is there a problem here? If yes, what is the problem? If no, why not?
 	1. Yes, it created overflow. He sum two positive numbers but sum is negative.
+28. If both operands will be 1, then AND operation equal to  1.
+29.
+	1. 0
+	2. 0
+	3. 0
+	4. 1
+30.
+	1. 01010111
+	2. 100
+	3. 10000000
+	4. 00010100
+	5. 0000
+	6. 0000
+31. If any operands or, both of them are 1, then result will be 1.
+32.
+	1. 0
+	2. 0
+	3. 0
+	4. 1
+33.
+	1. 11010111
+	2. 111
+	3. 11110100
+	4. 10111111
+	5. 1101
+	6. 1101
+34.
+	1. 0111
+	2. 0101
+	3. 1101
+	4. 0110
+35. Masks used for masking unchanged value will be remain same.
+36.
+	1. OR 01000000
+	2. AND 10111101
+	3. OR 11111111
+	4. AND 00000000
+	5.
+		1. Mask with m = 0000 0100
+		2. Bitwise AND with m (0000 0100)
+		3. Shift until the MSB by 5 (<< 5)
+		4. Result
+			1. (m AND BUSYNESS) << 5
+37. (((n >> 3) AND (m >> 3) AND NOT(s >> 3)) OR (NOT(n >> 3) AND NOT(m >> 3) AND s >> 3) << 3
+38. (((n >> 3) AND (m >> 3) AND NOT(s >> 3))) OR (((n >> 3) AND NOT(s >> 3) AND NOT(m >> 3) OR ((m >> 3) AND NOT(s >> 3) AND NOT(n >> 3))))
+39.
+	1. 0 1000 0000 11100000000000000000000
+	2. 1 1000 0100 10111010111000000000000
+	3. 0 1000 0000 10010010000111111011011
+	4. 0 1000 0101 00000000000000000000000
+40.
+	1. (+)2^1 = 2
+	2. (-)(2^4)*10001 = 17
+	3. (+)2^7 = -128 = unknown
+	4. (-)2^1 * 1.001 = -3.125
+41.
+	1. (2^7)-1
+	2. (2^7)-2
+42. Programmer might have treat to result as a character instead of number.
+43.
+	1. Hello!
+	2. hELLO!
+	3. Computers!
+	4. LC-2
+44.
+	1. We can add 0x30 to any ASCII representation for a digit. Because it range from 0011 0000 to 0011 1001 in binary and 0x30 hexadecimal notation of 0011 0000 in binary.
+45.
+	1.  D1AF
+	2.  1F
+	3.  1
+	4.  EDB2
+46.
+	1. 1000
+	2. 1000 0000 0001
+	3. 1111 0111 0011 0001
+	4. 1111 0001 1110 0010 1101
+	5. 1011 1100 1010 1101
+47.
+	1. 0001 0000 = -16
+	2. 0111 1111 1111 = 2047
+	3. 0001 0110 = 22
+	4. 1000 0000 0000 0000 = -32768
+48.
+	1. x100
+	2. x6F
+	3. x75B CD15
+	4. xFD4
+49. s
+	1. 2939
+	2. 6E36
+	3. 47F4
+	4. F1A8
+	5. On *c* and *d* overflow occurs.
+50.
+	1. 5468
