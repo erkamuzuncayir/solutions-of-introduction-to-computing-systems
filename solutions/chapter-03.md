@@ -1,6 +1,6 @@
 # Chapter 03
 
-> I share falstad links in some of the exercises those links created with [Falstad](falstad.com). This site has a online circuit simulator and I use this site for solve and test solutions of my exercises. If you came across those kind of situation, I highly recommend due to very easy use and share features of site.
+> I used to solve falstad for solve some of the exercises. Those shared links created with [Falstad](falstad.com). This site has an online circuit simulator and I use it for solving exercises and test the correctness of my solutions. If you came across this kind of problem, I highly recommend due to very easy use and share features of site.
 
 1. S
 	1. n-type
@@ -47,7 +47,7 @@
 17. S
 	1. AND [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAHcLCrcAWTqnjzwgU7fiEHDCPAUKhihVMFwl5aKyArXjp6qpo4Y0FQSCMDp8jjO4oJcEITzCD9qk6kzHzq2eMIMQj93I3kAc2CzSD5zEDV9ETFY3kcvFNddEBTMsGI7VwQVFMKlDTEcvNSlQPkAJSrwU0zLBK8kBJgELVKBbWVfRXAg2P7RQ2N+kbL6+Ma+WZaoe2oO6C6OWbAa2fSk4xSd6IGHbDsbEAZT46pLu2cbq7G47VvnnrqQYlMwUy++RYEtCW+jWYj+4Bq4N2HChR0OfFcySckWhKORsR4V00ABlxJIssj8UoQAAzACGABsAM50FYsXGDEoE4RM4nk6m09r0hoeZneFzgUmUml08bcZFgODCbDI1yS-B8+XCFCFXxKxVS1T6Fgk5AKlVBSU+A0UbDgNZQWCiXXqwZG4SMuxgC0wSCier2kReT1bIKtIGrdbIY2hT0ylxiMMS-AOlosCKenjEQ0xkwIxIAWWD0olKCu4aWKFBusy+IxcgQTpdVp1DSZsSZlfN7RrJa8vNivKbzpbbtrTOU7m9KgQZp7lr7uqmVE2I7H1cnbyGVHBg9NzYnoiAA)
 		1. ![Solution](_attachments/Pasted%20image%2020241106134646.png)
-	2. OR [falstad Link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgDOB0YzCsICMZICYaoOyYMxgByoBsAnCZiHBAlZQKYC0iiAUAGYgAsiRIqcvIgL7C4OJJAQowqdlyKcQOfIqG9lisRKnRZHTgsqJUINUZNbEkqDJYB3LjyUr5ijeHuPecY6-MeAJVNhVE4IMxJeCAgwynB4lDhPMywTMxwifA8HM05I4N4w6OTRVCyzAWKc0SJw0RITMBLvBpB8HAtWpuqWtOEzboLKVrze7K58uBH8gc92zpN5oaaOTDg0zEWO003KEysdWw4pjb7BXfXtGz0ubaJd0Z2LfetpWQdUkV5P+8bPH4ed12g243xCu34UU8oOcbku7kGOHhLiRJkwmXGqJA6KylWxGMGeJxwzRBM8J3xuNav3Ga1O2MuKiyIKcPhMMKZ4w5nCydLaPI8AHM2nd8FklrgonwWMKzJlysJJfFZMLHvKJrwlRB3kM8SRfHimgAZPgQkKhL4JEBsACGABsAM50OLGpTIxSoC0I+K2x3OqQsE0wtl8C0h6LW+1Ol2efUWWogON+QZJvW+WYcJMGRTkQqGSyvXRyJMRdG6l6HHW5ygJ6sKKqJst6ss84pBaucAXVrER2JSBKSFgAWUb3gTyAuCe1g+Fdd21b52pYQA)
+	2. OR [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgDOB0YzCsICMZICYaoOyYMxgByoBsAnCZiHBAlZQKYC0iiAUAGYgAsiRIqcvIgL7C4OJJAQowqdlyKcQOfIqG9lisRKnRZHTgsqJUINUZNbEkqDJYB3LjyUr5ijeHuPecY6-MeAJVNhVE4IMxJeCAgwynB4lDhPMywTMxwifA8HM05I4N4w6OTRVCyzAWKc0SJw0RITMBLvBpB8HAtWpuqWtOEzboLKVrze7K58uBH8gc92zpN5oaaOTDg0zEWO003KEysdWw4pjb7BXfXtGz0ubaJd0Z2LfetpWQdUkV5P+8bPH4ed12g243xCu34UU8oOcbku7kGOHhLiRJkwmXGqJA6KylWxGMGeJxwzRBM8J3xuNav3Ga1O2MuKiyIKcPhMMKZ4w5nCydLaPI8AHM2nd8FklrgonwWMKzJlysJJfFZMLHvKJrwlRB3kM8SRfHimgAZPgQkKhL4JEBsACGABsAM50OLGpTIxSoC0I+K2x3OqQsE0wtl8C0h6LW+1Ol2efUWWogON+QZJvW+WYcJMGRTkQqGSyvXRyJMRdG6l6HHW5ygJ6sKKqJst6ss84pBaucAXVrER2JSBKSFgAWUb3gTyAuCe1g+Fdd21b52pYQA)
 		1. ![Solution](_attachments/Pasted%20image%2020241106133258.png)
 	3. AND
 		1. A = 1, B = 0, C = 0, OUT = 0
@@ -84,7 +84,7 @@
 25. Solution;
 	1. The first figure is a *mux*, used to select one of the inputs. The selected output will not be stored.
 	2. The second figure is an *R-S Latch*, used to store the binary value inside. The output will be stored.
-26. [faltsad link](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkRtC8QU8eUKACy9+UcCABmAQwA2AZzrVI7EELCFOaUT2zaqEGQqVIVYShTApOkEYXw2RVa7RbnrGbmr0hifby5q1AgsAO4gnrq2EV5CcFAsALK+-kI+xEIiaYEo0CHhXAJihZx4TmFqGlpU6prYZQkAkpWa2ZbWbVQwSPntavElcV0VgwNe9eXhtaVZVZ0szfY80xja0115FG4I1ghWLSBLB87BFdNt0wiZCQWxYzx7LmdCD-sljzcUfhT+q7T+KnCf0cMSikwiayqkWOFWBmR40Phn2BOwRaxeCXM-we-gQ31R4kCIWal2uBKuTigm16SI+5P2gMODlwImBLKaBz0tDe+ipPQWBz4r2sQvE3S2UyqopKorMFgJhDiX2siq6vFO4TxKqV0NVyK8esRis+7zeBuEJvNIgVFsZpNmmkICE0dqqTs0CudCSAA)
+26. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkRtC8QU8eUKACy9+UcCABmAQwA2AZzrVI7EELCFOaUT2zaqEGQqVIVYShTApOkEYXw2RVa7RbnrGbmr0hifby5q1AgsAO4gnrq2EV5CcFAsALK+-kI+xEIiaYEo0CHhXAJihZx4TmFqGlpU6prYZQkAkpWa2ZbWbVQwSPntavElcV0VgwNe9eXhtaVZVZ0szfY80xja0115FG4I1ghWLSBLB87BFdNt0wiZCQWxYzx7LmdCD-sljzcUfhT+q7T+KnCf0cMSikwiayqkWOFWBmR40Phn2BOwRaxeCXM-we-gQ31R4kCIWal2uBKuTigm16SI+5P2gMODlwImBLKaBz0tDe+ipPQWBz4r2sQvE3S2UyqopKorMFgJhDiX2siq6vFO4TxKqV0NVyK8esRis+7zeBuEJvNIgVFsZpNmmkICE0dqqTs0CudCSAA)
 	1. ![Solution](_attachments/Pasted%20image%2020241106165501.png)
 27. 14 bit address can store 2^14 byte. If the nibble takes half the space of the byte, this memory can store 2^14 * 2 = 2^15 nibbles.
 28. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDDwBYQPCvsEUFQlX6CqrAO7deIbJ25hCs+ZBZSefAcs1iWAGW2yt2QniNioIAGYBDADYBnOtVUGOiwybNyuVKrcdnJFcFJQQOPlMKCMt-eycXfUMEMEEvClTY63igqDVpLhS0+SK89RlwrncwmNV2KorMhGEMi0khES0MNG4OM1UpZtpM7qo+vxYAWRA8PDG+kGJMiP6QFGgENnlR3rMMeRXLdrwPQ9n5-vyBM0Pq3bKKFDNhG48Xh7v3u8OQ74X0n6WAIJYJJfaFGLgkCEFC+IE5RJAA)
