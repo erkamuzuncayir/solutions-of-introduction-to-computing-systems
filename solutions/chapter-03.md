@@ -95,3 +95,55 @@
 	   | 1  | 0  | LEFT TOP OR BOTTOM I1 |
 	   | 0  | 1  | LEFT BOTTOM I0 |
 	   | 1  | 1  | LEFT BOTTOM I1 |
+29. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAHcQ8qAWbvT2in6R2AikLGEU3KCzAIIXEN2woQmNSrVU1SBHIRqlhbjoxqTVHVAqiNIS+vMUMhWfKrZsbhIR58KPxtdWw57LSddXlkw5wj7bDwZEVi1RJlfTyT3BGxAnjgHOMLrWlFefkz86pTq7jAfIKraqtagv2FRKo6ii3wY3uVCwmcFbQMqEd0JPFVxYXUbfQ4ph37VhGiRAFlOOcN+PBN54Oh9AElIlzcvH1cbGD1RW4po+03klgAZSV9wN0IfysIAAZgBDAA2AGc6NQRD8lAd-idgeDobCkPCxPU3A1lHjUZCYXCWEA)
+    ![Solution](_attachments/Pasted%20image%2020241116001424.png)
+     | A | B | C | Z |
+     | - | - | - | - |
+     | 0 | 0 | 0 | 0 |
+     | 0 | 0 | 1 | 0 |
+     | 0 | 1 | 0 | 0 |
+     | 0 | 1 | 1 | 0 |
+     | 1 | 0 | 0 | 0 |
+     | 1 | 0 | 1 | 0 |
+     | 1 | 1 | 0 | 0 |
+     | 1 | 1 | 1 | 0 |
+30. Solution:
+	1. It is selector of a *mux*. If x = 0, operands of adding operation will be A + B; if x = 1, operands of adding operation will be A + C.
+	2. Can't solve.
+31. Solution:
+	1. 2 propagation delay due to some inputs propogate through 2 gates.
+	2. 3 propagation delay due to Ci propogate through 3 gates.
+	3. 12 propagation delay due to Ci propogate through 12 gates.
+	4. 96 propagation delay due to Ci propogate through 96 gates.
+32. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkQUAWK7qsFHk49OUEADMAhgBsAznWqR2w3hhThBnNaKpS5CpEo58QuLhqFmdEmfMXKT2bIQunn1vXcMORzoQMtCIXVdWwMoHyoefk1ojzD7YxEubHUAkBT1EJt9RJUMwnN0rkL43O8ADxAMc25scAFhFyLzSAAaAB1ZSC62pSqarSRmLIwhFqhO7qnWAfNcchHTMCjwVpmp-ur57GIG9WwudQn2rrAZljnTDAgl7EGJ867T7svtjMh6pZ5mtfBNi5XFLDRopcZ-J6ySFbB6ERagjCrMBFDZnFhgBAHIKcPBCBCNQRCKguWjozGmbFcMAufHHaliEkUFgAWQoBNxFEIvA5WWgCBZbLpNK5GXpvP5AHc3M1Sk4XHKIlKFcrsQqlFKTCUdjLWiwle4tRTxqV1flMlpjqlFRaMlbMMcuES9TauI6jRk3abNXAceMfV6OXFCbaQs7g+a-CHrY53FY1c647HIOY4qarHFI6mw75sfb3V7tJG86kqAWDmh3SXo75k5Xa16RMXc9ojKZyY5yWAMIzQuVrdh2zngiI04OqAOsggSQn21P3Sg56PJ-LyZGl5XVdj15GJ6Y8Lqlav95Xj0ogA)
+    ![Solution](_attachments/Pasted%20image%2020241116001406.png)
+	1. yes, we can.
+33. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDEpDTxGzR8gAsPPlRRQKLAJLgBQ3EK78hVGEgQsA7jLmDtIAWEJQ2HRQN5L9F0ePVb5VsQ4Fxj93byoPshbpE2WPtzYCE6+bpYuXqH6rv7sTjHYeEIChHIp4mK0LACy+uk8maHBmaLQdgUZqYUCeCoBaan14MRidQ1aYG36Ld3tdRH9+oNmg-4AMpz4PD4gLdhzKiAAZgCGADYAznTU-l2y+obT3AZGk3pneghg2eLr27tI-kA)
+	1. a.
+		1. A = Z
+	2. Circuit preserve previous valie.
+	3. Yes, it is.
+34. Solution:
+	1. 11 = 3
+	2. 11 = 3
+	3. 3 (11) x 3 (11) = 9
+	4. 4 bit requires for representing 9 in binary (1001).
+	5. | A\[1] | A\[0] | B\[1] | B\[0] | Y |
+	    |   0  |   0  |   0  |   0  | 0 |
+	    |   1  |   0  |   0  |   0  | 0 |
+	    |   0  |   1  |   0  |   0  | 0 |
+	    |   0  |   0  |   1  |   0  | 0 |
+	    |   0  |   0  |   0  |   1  | 0 |
+	    |   1  |   1  |   0  |   0  | 0 |
+	    |   0  |   1  |   1  |   0  | 2 |
+	    |   0  |   0  |   1  |   1  | 0 |
+	    |   1  |   0  |   1  |   0  | 4 |
+	    |   0  |   1  |   0  |   1  | 1 |
+	    |   1  |   0  |   0  |   1  | 2 |
+	    |   1  |   1  |   1  |   0  | 6 |
+	    |   0  |   1  |   1  |   1  | 3 |
+	    |   1  |   1  |   0  |   1  | 3 |
+	    |   1  |   0  |   1  |   1  | 6 |
+	    |   1  |   1  |   1  |   1  | 9 |
+	6. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAA8QmQUAWPEHhBQIIPbmICCAbTABddpxTc8VHlRR5sA8SGmR5HBkrX81A5tt4gAQlP0Ku2DIXMgnxS2NtyWAWRCEGMaEYkGqIVDc0AgsYJRukGLCLmrqCC7q1DFxVLhi2HhiqW6FkUpIMQCS4upBCUl1VDAVLNW8uYT8eW6dkc0UsfE82EojtM5uaGVZLADuAnDc6QIjSxlzK0rJm-VQG8UFRauHe-PDo73nbtjr893tNY+QG93FD8XP82Aajw8Pz3FyhMeBFAsExJkWndEhQfg8ED9PrtCMsHij1m0zDxiC5Xji+tEBpiqJ0ujDSQSWjldiJjItadNaINcuS6sUwYyBmdjpdjqUkWBgfj3vikX86mAeA0lAK4WZvqZRRsFQJ8YKUkqvlLuBLtQj+AK9XLaIjlYQOvwHjcDWaLeBzQFlgKHejHq6xVjFuqFk1lcCvRMKQLA3hLWYg8ydghiECXNGZdxIjEzvTvlG00irgysxNM6tzaZ8419kW6STi-MEBMxhRgXxTrW4zHGwIVHsADLgY0BJJmKgQABmAEMADYAZzo1Gencl0p7OoTVGH48nSGn9rtEWtfRAy4nU5YM-9JKKi37u9H+7XLCAA)
+	   ![Solution](_attachments/Pasted%20image%2020241116001323.png)
