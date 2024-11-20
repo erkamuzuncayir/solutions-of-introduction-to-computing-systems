@@ -147,3 +147,71 @@
 	    |   1  |   1  |   1  |   1  | 9 |
 	6. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAA8QmQUAWPEHhBQIIPbmICCAbTABddpxTc8VHlRR5sA8SGmR5HBkrX81A5tt4gAQlP0Ku2DIXMgnxS2NtyWAWRCEGMaEYkGqIVDc0AgsYJRukGLCLmrqCC7q1DFxVLhi2HhiqW6FkUpIMQCS4upBCUl1VDAVLNW8uYT8eW6dkc0UsfE82EojtM5uaGVZLADuAnDc6QIjSxlzK0rJm-VQG8UFRauHe-PDo73nbtjr893tNY+QG93FD8XP82Aajw8Pz3FyhMeBFAsExJkWndEhQfg8ED9PrtCMsHij1m0zDxiC5Xji+tEBpiqJ0ujDSQSWjldiJjItadNaINcuS6sUwYyBmdjpdjqUkWBgfj3vikX86mAeA0lAK4WZvqZRRsFQJ8YKUkqvlLuBLtQj+AK9XLaIjlYQOvwHjcDWaLeBzQFlgKHejHq6xVjFuqFk1lcCvRMKQLA3hLWYg8ydghiECXNGZdxIjEzvTvlG00irgysxNM6tzaZ8419kW6STi-MEBMxhRgXxTrW4zHGwIVHsADLgY0BJJmKgQABmAEMADYAZzo1Gencl0p7OoTVGH48nSGn9rtEWtfRAy4nU5YM-9JKKi37u9H+7XLCAA)
 	   ![Solution](_attachments/Pasted%20image%2020241116001323.png)
+35. Old value can't be recovered when overwrite on it.
+36. Solution:
+	1. | A | B | G E L |
+	   | - | - | ----- |
+	   | 0 | 0 | 0 1 0 |
+	   | 0 | 0 | 0 0 1 |
+	   | 0 | 0 | 1 0 0 |
+	   | 0 | 0 | 0 1 0 |
+	2. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkRCMUKNDOUAFl78qVAGYBDADYBnOtUjtO3TvgHDC6sSClyFSJWEogc-BMR55BeCpaggetFgA9TeJAmwRr57MOEhEABRAEcAVxkWAElTbH4MSGE8OFMkhxhPFmMqFKpuKmIwHgKHHizYszj+POqM6CyAdxUeLVtEzW0WZq5yvk48WwR+pR7BkQH29NG0zqnhKpnCceGE+ImZjrV29baobtm6qsWD5fmj6eyEHiLWhH4wSFVCe7LqBAPb0zQQL9795rWIb2L4WJyfYqcQSFSFg-YAWWQz1ezB+L1Ejgayi22DRQVxOgkMnkiiuJWuIFwyRslOmjnep1UKHGGApzNsm3SBNMFO5Sg4-3ZGkc4yoED0JMMBxxPy2gjAokZPCF-2w1n2OR5PGhuRpOrezmacoVWpA8sVPVUaoWvPVSliQNpwi+VPqWWMN0h2Apj2hlIpVCcFAhPGw6xdl2aLuWv0h+pmX31jvjMWQfu9PGYXIDUAawbceG8jmGseVWjNjmEAHEAE50SQAFzoNaVlPV-xsYlbnfAvrNKQ1JizARNxVS5reTV72czfZTzWHZtx04CA6UiLHVAnxWXE8DWI3aEK-R3NxGmI+C77pFn6V9Xav6S+i+I5aMQ+vJ6Pv3P5WDRrvJIxT7e99gLIs8DAchiEgbAQAILdKxANg6FkeQW1iUDn2vSExDzS9S1+ctHVfB9CMsWwvlIgFCLwV9aMIYR309Fi0xhIMgw+B0aTwRiGKY3Mp3+YhBBtG5RJorYyASClpMHfJZOImlqMDBwCP+R1hIkzlkgHKSRmUDSaUIIJHR0CUDEk9JBgUqw11bR1WSsGlmNNXjqVsdzJ2DDgths4V-LFXRiUsnSfwSQC-SUIA)
+	   ![Solution](_attachments/Pasted%20image%2020241117112619.png)
+	3. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDEpB0JFwBYQ8vPD0j8qKKBRYAPTniQoExAb25EJ-FPwCiARwCuAQwA2LAJKds3XmG544IG9yowkCNh3tVe2CcTAavpISbuaW1kICDryRLtChAO4ghBgSvlQYojxoUCxJKRIoeMKExSBFwpB5yWUVNcJOuUmZ-OmcWTGV1aXCdVzlZVXNWW39bUPt-J3hjrHdZY39jVXsfgE8pcipG5Xl1O5J-oFraYJNKsJ8IEciYtU32Agnt+c3zM+Ed0mCJfw3n691mBiM8wDFcqtrkCilsJAFdiEpPkymAMNx+qjnNUWuV8DM0F1hvx7DMSRMeo5hEtCZMorSCecKZEKZjGdtmQsaQU6TiyWF+gyvLjdq4pOwqELgaCQcF9vyrOA0VEqKy4qFZBh5LiVGpsI5yjoDCYPBkFQCfskxHtaCwADIUGGRVRTEUgABmJgAznRqFV7U9egsAXUXO6vT6kH7LVQ2ggleNJB7jN7fXbo3S43ZQ1QkynIzJHMQ9UQaMoUMpNPwAIIFwiQciYZIoPW4fVaEAAITTAc4m2dvdduYjuX9MJ7-Z7oaHqftn1odYoSoQC6n4Zn6aFmeVkhza-z4pmCHBFqPVokNo1WsoEtUND1lZAeiMpgs-UIy+37+cUHiYs8Dm5f5tnEOVXzNMohQpNUkWSbZlwyLJ4LZEIYQpSd5mEHsKS-c4cSQnEoIwh0qQVdCiQoBd+iQiYCLKN9BiInC3w-FYnihCQ62EMB6w4vEQMSdjYI+dsJhPcEblPQEQhlCTwQmG48CCG5NS+C45D+dYVKkwSFIBVjngtbjtgtfiYIpPBiHRBULKxciQRI7h7NwrIhX6IVyTozZ+jRGleQcHEnI8qlNnMyzkIHeoIvJYz-JchwqjAxyYSFQKf1CA8UvWG4blM9xEoEMKhRsndf3cS8kBwZRBHRXgNANR8jVMA9vLOC0tJAm0knHEp2RpHs6m5ENqh7LC4JhCYex8oSou6XgJQAmKXFm+cqG5ajluyVbtnGDaSW5PkDwCaIwrAXwGjC7w5SSIy4RhI7vD06obp2cA0G8Plrp45I8Xuih1gmX6e2ekyWAAWXAM7C24U6lV4C7yniFggA)
+	   ![Solution](_attachments/Pasted%20image%2020241120102417.png)
+37. Needs to three bits to access a location in memory which means 2^3 = 8 unique location can be addressed. So 8 byte * 8 possible unique address = 64 byte total size of memory.
+38. Memory addressability defines smallest unit of memory(data) that can be accessed. Memory address is a unique identifier for a specific location in the computer's memory.
+39. Solution:
+	1. In order to obtain the fourth memory location the value on the address lines A[1:0] should be 1,1 respectively. WE is 0.
+	2. We should increase more than 2^5 = 32, so we need one more, 6 address lines are required. Addressability of the memory won't be changed.
+	3. We need 4 more address from 64-60.
+40. Solution:
+	1. The number of addressable memory locations is 4.
+	2. 4 bits for addressability.
+	3. Last one, 0001.
+41. 2^22 * 3 = 12582912
+42. There is no effect of current output. Inputs just cycle between them, one and another.
+43. If one incorrect operation performed after one correct operation, this is can be a state to resetting current state to "no relevant operations have been performed" state.
+44. Texas = 30 | Oklahoma = 28 => Texas = 30 | Oklahoma = 30
+45. Solution:
+	1. It can be. If there will be free throw happens two times in a row there will be a progression like this.
+		1. Texas = 30 | Oklahoma = 28 => Texas = 30 | Oklahoma = 29 => Texas = 30 | Oklahoma = 30
+46. Not solved. Because drawing take too much and will helped too little.
+47.  ![Solution](_attachments/Pasted%20image%2020241120155022.png)
+48. Because Y is the input of W and it stores state information of 1 state and 2 state.
+49. Solution:
+	1. | S1 | S0 | X | D1 | D0 | Z |
+	   | 0  | 0  | 0 | 0  | 0  | 0 |
+	   | 0  | 0  | 1 | 0  | 0  | 0 |
+	   | 0  | 1  | 0 | 0  | 0  | 1 |
+	   | 0  | 1  | 1 | 1  | 0  | 1 |
+	   | 1  | 0  | 0 | 1  | 1  | 1 |
+	   | 1  | 0  | 1 | 1  | 1  | 1 |
+	   | 1  | 1  | 0 | 1  | 0  | 1 |
+	   | 1  | 1  | 1 | 1  | 0  | 1 |
+	2. ![Solution](_attachments/Pasted%20image%2020241120161816.png)
+50. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDAQlwBYQvCeu2FL35Rw1BCwAyIFHjwieaBXx5UqAMwCGAGwDOdapBYBZXkMW88VVWJTRJADxDZcvFMRfXzwpTwByAPIAKmwcLpA8CBiEvGCx0bFUwkiS7BBc8RQxFGApOVQQtKa5+QlcUQWyDizOrtgU2Jx4DQjYArI8AIL+ACJhnJEghBi+WSPChRIDETwYQ5mx82riqTOLw-IUcpsKyWKSZgg7hFsIhFSne9WSMpi+xLHKvI9imroGRiwA7rOW3BQLlAfn8EMRhPcKODgb8ActZKMQPDjLChucqACJjCEQ8noiwZMQZCCTikUMUbItrYAbZjHVsJ5+JwMEh+B0UDxAgAlFhAA)
+    ![Solution](_attachments/Pasted%20image%2020241120162832.png)
+51. Flip-flop
+52. [falstad Link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDAQgBZjCRvfCKTnx5QQKMQhYB3EQM5V+FDL0gy5FMBM6FhHCWtk69WvrpCF8UdcYtXBwy3muyHd528IJVN0QhUWQso+rkH+AkFKagAyGpx4inB8CWIQAGYAhgA2AM501DEahBjaScUGYpm5+UiGgcJK5RpqALIWJRoliqJUKNBS7NhF3vUWI73UUkA)
+    Just for the A = 1, B = 0 values.
+53. 3 bit decrementor.
+    ![Solution](_attachments/Pasted%20image%2020241120172251.png)
+54. ![Solution](_attachments/Pasted%20image%2020241120205404.png)
+55. Solution:
+	1. ![Solution](_attachments/Pasted%20image%2020241120204630.png)
+	2. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABlwNCQUAWKsCjw9+PKCABmAQwA2AZzrVI7Tt0wpwQnhg0aq0+YqTKOYLiFy9Nwy2P2yFSlWe7Zs3QTfd3JDo1Gdzd2FPC0JhPV9DJ1NzfgEteJ8DR2NA7l5sDVDM3XEU-xNVEF5CKxyy5L8nAA8QDCs+bHBBEQzwK0gAGgAdOUg+ruU6hu0kZl0MYXLO3v651hGrXHIJizAqGagFueH65exiFo1sXg0t7r6wBZYliwwINexRreu+y-7b-ZLIZrX+dpgcq7G53TLjVqZaYdcA7d5fF6EVaQjCbGFvOQY1hgBAncIWSBWXjEVyE8SdCgsHF46ZgDIkkp08niBAsADuxXUFjQ2j07O5VC5wV5AQAsiUGbYELxlmTBdBWRyXATGngbHL+UIImqBTwdcoOVlBTrhVqAoaycLbEbzSrdVaeQbiqVljyXbabe6bW5uE7vd4rd4nWaQyaNRyzbZI3hOpqTTGwjYE07lT6RWngzoLN4uUlM+c4ImflRgwhXPjrfiU0F8Sgy0XS+WIvXcra6xkskXW9WMoW+JtC8HREl+yVeMIh5tx13p8pxcSMkzpUSmfLWUA)
+	   ![Solution](_attachments/Pasted%20image%2020241120205334.png)
+56. Solution:
+	1. ![Solution](_attachments/Pasted%20image%2020241120210044.png)
+	2. State machine has 5 states, so with using 3 bits we can represent all of them. Need only three variables.
+57. ![Solution](_attachments/Pasted%20image%2020241120211432.png)
+58. ![Solution](_attachments/Pasted%20image%2020241120213447.png)
+59. ![Solution](_attachments/Pasted%20image%2020241120214409.png)
+60. Solution:
+	1. ![Solution](_attachments/Pasted%20image%2020241120214924.png)
+	2. It will be 011. Because clearly it's looping.
+61. Solution:
+	1. ![Solution](_attachments/Pasted%20image%2020241120225041.png)
+	2. ![Solution](_attachments/Pasted%20image%2020241120230432.png)
+62. *This exercise requires a lot of energy, but gives very little. That's why I didn't try it.*
