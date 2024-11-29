@@ -41,7 +41,6 @@
 ---
 9. Updating the PC(Program counter). Program counter incremented to point to memory address of next instruction. So at the next cycle the next instruction will be processed.
 ---
-![Solution](_attachments/Pasted%20image%2020241106101858.png)
 10. ![Solution](_attachments/Pasted%20image%2020241129160151.png)
 ---
 11. Solution:
