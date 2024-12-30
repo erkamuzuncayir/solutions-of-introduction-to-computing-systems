@@ -7,3 +7,4 @@ This repository contains my solutions for Introduction to Computing Systems - Fr
 2. [Chapter 2](/solutions/chapter-02.md)
 3. [Chapter 3](/solutions/chapter-03.md)
 4. [Chapter 4](/solutions/chapter-04.md)
+5. [Chapter 5](/solutions/chapter-05.md)
