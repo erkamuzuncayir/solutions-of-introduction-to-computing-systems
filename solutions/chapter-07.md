@@ -111,4 +111,5 @@ TESTNUMBER      .FILL   x8000
 36. Solution:
     1. R0 = A, R1 = B, R2 = -B
     2. At the line 10, instead of ST it should be STI.
-37. ![Solution](_attachments/Pasted%20image%2020250110234939.png)
+37. Solution:
+    ![Solution](_attachments/Pasted%20image%2020250110234939.png)
