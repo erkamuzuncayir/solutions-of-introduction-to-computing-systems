@@ -14,3 +14,7 @@ This repository contains my solutions for Introduction to Computing Systems - Fr
 8. [Chapter 8](/solutions/chapter-08.md)
 9. [Chapter 9](/solutions/chapter-09.md)
 10. [Chapter 10](/solutions/chapter-10.md)
+11. [Chapter 11](/solutions/chapter-11.md)
+12. [Chapter 12](/solutions/chapter-12.md)
+13. [Chapter 13](/solutions/chapter-13.md)
+14. [Chapter 14](/solutions/chapter-14.md)
