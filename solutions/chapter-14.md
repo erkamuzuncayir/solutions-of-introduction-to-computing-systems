@@ -183,3 +183,258 @@ int FindSmallestEvenlyDivisibleNumber(int limit)
 
 16. Solution:
 
+    1. Code:
+
+```c
+#include <stdio.h>
+#define IDLE_STATE 1 // Define IDLE_STATE as 1 to represent idle machines
+
+int FindBusyMachineCount(int machineState);
+int main(void) {
+  int input;
+  scanf("%d", &input);
+
+  int busyMachineCount = FindBusyMachineCount(input);
+
+  printf("%d\n", busyMachineCount);
+}
+
+int FindBusyMachineCount(int machineState) {
+  int count = 0;
+
+  for (int i = 0; i < 32; i++) {
+    if (IDLE_STATE & (machineState >> i))
+      count++;
+  }
+
+  return count;
+}
+```
+    2. Code:
+
+```c
+#include <stdio.h>
+
+int DetermineStateChangesOnMachines(int stateBefore, int stateAfter);
+int main(void) {
+  int firstNum;
+  scanf("%d", &firstNum);
+
+  int secondNum;
+  scanf("%d", &secondNum);
+
+  int stateChanges = DetermineStateChangesOnMachines(firstNum, secondNum);
+
+  for (int i = 1; i <= 32; i++) {
+    printf("%d", 1 & (stateChanges >> (32 - i)));
+  }
+  printf("%d\n", stateChanges);
+}
+
+int DetermineStateChangesOnMachines(int stateBefore, int stateAfter) {
+  int stateChanges = 0;
+
+  for (int i = 1; i <= 32; i++) {
+    int bitBefore = 1 & (stateBefore >> i);
+    int bitAfter = 1 & (stateAfter >> i);
+
+    if (bitBefore == bitAfter)
+      stateChanges &= ~(1 << (i));
+    else
+      stateChanges |= (1 << (i));
+  }
+
+  return stateChanges;
+}
+```
+    3. Code:
+
+```c
+#include <stdio.h>
+#define IDLE_STATE 1 // Define IDLE_STATE as 1 to represent idle machines
+
+int DetermineStateChangesOnMachines(int stateBefore, int stateAfter);
+int FindBusyMachineCount(int machineState);
+int main(void) {
+  float inputCount = 0;
+  int currentMachineState = 0;
+  int lastMachineState = 0;
+  int totalBusyCount = 0;
+  int totalStateChanges = 0;
+
+  printf("Please enter input count: ");
+  scanf("%f", &inputCount);
+
+  for (int i = 0; i < inputCount; i++) {
+    scanf("%d", &currentMachineState);
+    totalBusyCount += FindBusyMachineCount(currentMachineState);
+    if (i != 0) {
+      totalStateChanges += FindBusyMachineCount(DetermineStateChangesOnMachines(
+          lastMachineState, currentMachineState));
+    }
+    printf("%d", totalStateChanges);
+    lastMachineState = currentMachineState;
+  }
+
+  float averageBusyStateCount = totalBusyCount / inputCount;
+  float averageStateChangeCount =
+      (inputCount > 1) ? totalStateChanges / (inputCount - 1) : 0;
+  printf("Average busy state count is: %f", averageBusyStateCount);
+  printf("Average state change count is: %f", averageStateChangeCount);
+}
+
+int DetermineStateChangesOnMachines(int stateBefore, int stateAfter) {
+  int stateChanges = 0;
+
+  for (int i = 1; i <= 32; i++) {
+    int bitBefore = 1 & (stateBefore >> i);
+    int bitAfter = 1 & (stateAfter >> i);
+
+    if (bitBefore == bitAfter)
+      stateChanges &= ~(1 << (i));
+    else
+      stateChanges |= (1 << (i));
+  }
+
+  return stateChanges;
+}
+
+int FindBusyMachineCount(int machineState) {
+  int count = 0;
+
+  for (int i = 1; i <= 32; i++) {
+    if (IDLE_STATE & (machineState >> i))
+      count++;
+  }
+
+  return count;
+}
+```
+
+17. Solution:
+
+    1. Code:
+```c
+int Multiplexer(int firstInput, int secondInput, int thirdInput,
+                int fourthInput, int select) {
+  switch (select) {
+  case 0:
+    return firstInput;
+    break;
+  case 1:
+    return secondInput;
+    break;
+  case 2:
+    return thirdInput;
+    break;
+  case 3:
+    return fourthInput;
+    break;
+  default:
+    return 0;
+    break;
+  }
+}
+```
+    2. Code:
+```c
+#define ADD_OPCODE 0
+#define SUB_OPCODE 1
+#define AND_OPCODE 2
+#define OR_OPCODE 3
+#define NOT_OPCODE 4
+
+int ALU(int firstOp, int secondOp, int opcode) {
+  switch (opcode) {
+  case ADD_OPCODE:
+    return firstOp + secondOp; // Addition
+  case SUB_OPCODE:
+    return firstOp - secondOp; // Subtraction
+  case AND_OPCODE:
+    return firstOp & secondOp; // Bitwise AND
+  case OR_OPCODE:
+    return firstOp | secondOp; // Bitwise OR
+  case NOT_OPCODE:
+    return ~firstOp; // Bitwise NOT (only operand1 is used)
+  default:
+    printf("Invalid opcode\n");
+    return 0; // Return 0 for invalid opcode
+  }
+}
+```
+
+18. Solution:
+```c
+#include <stdio.h>
+
+void PrintInput(char ch);
+int main(void) {
+  int input = 0;
+  int lastInput = -1; // Preventing first comparison check to wrongfully true.
+  int inputRepeatCount = 1;
+  char lastPrintedChar = '\0';
+  char printChar;
+
+  for (int i = 0; i < 8; i++) {
+    scanf("%d", &input);
+
+    if (input == lastInput) {
+      inputRepeatCount++;
+      printChar++;
+
+      if (inputRepeatCount == 4 && (input == 7) || (input == 9)) {
+        PrintInput(printChar);
+        lastPrintedChar = printChar;
+      } else if (inputRepeatCount == 3) {
+        PrintInput(printChar);
+        lastPrintedChar = printChar;
+      }
+    } else {
+      if (i != 0 && lastPrintedChar != printChar) {
+        lastPrintedChar = printChar;
+        PrintInput(printChar);
+      }
+      inputRepeatCount = 1;
+      switch (input) {
+      case 2: // ABC
+        printChar = 'A';
+        break;
+      case 3: // DEF
+        printChar = 'D';
+        break;
+      case 4: // GHI
+        printChar = 'G';
+        break;
+      case 5: // JKL
+        printChar = 'J';
+        break;
+      case 6: // MNO
+        printChar = 'M';
+        break;
+      case 7: // PQRS
+        printChar = 'P';
+        break;
+      case 8: // TUV
+        printChar = 'T';
+        break;
+      case 9: // WXYZ
+        printChar = 'W';
+        break;
+      }
+    }
+
+    lastInput = input;
+  }
+}
+
+void PrintInput(char ch) { printf("%c\n", ch); }
+```
+19. Solution:
+
+```
+A: The variable z equals 3
+B: The variable z equals 5
+C: The variable z equals 7
+D: The variable z equals 4
+```
+
