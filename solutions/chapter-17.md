@@ -46,7 +46,7 @@ int SigmaIterative(int k) {
     1. 16 KB = 16384 Byte / 4 Byte (1 for frame pointer, 1 for return address, 1 for return value, 1 for argument = 4096
     2. 4 KB = 4096 Byte / 4 Byte (1 for frame pointer, 1 for return address, 1 for return value, 1 for argument = 1024
 
-8. Solution:
+8. Solution: Because the recursive implementation needs many extra calls compared to the iterative implementation.
 
 ```c
 #include <stdio.h>
@@ -68,4 +68,46 @@ int Fib(int k) {
   printf("%d\n", sum);
   return sum;
 }
+```
+
+9. Solution: Just convert `else if (item < list[middle])` to `else if (item > list[middle])`.
+
+10. Solution: 3, 2, 2. Find the greatest divisor that can divide both numbers. We should probably test every number that is smaller than the smaller of the two numbers.
+
+11. Solution:
+
+```c
+int M() {
+  int num = 1;
+  int x = 0;
+  while (num > 0) {
+    printf("Type a number: ");
+    scanf("%d", &num);
+    if (num > x)
+      x = num;
+  }
+  return x;
+}
+```
+
+12. Solution:
+  1. None.
+  2. 6.
+  3. Recursive call count.
+  
+13. Solution: Can't solve.
+
+14. Solution:
+
+```
+9
+7
+5
+3
+1
+2
+4
+6
+8
+10
 ```
