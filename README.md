@@ -22,3 +22,4 @@ This repository contains my solutions for Introduction to Computing Systems - Fr
 16. [Chapter 16](/solutions/chapter-16.md)
 17. [Chapter 17](/solutions/chapter-17.md)
 18. [Chapter 18](/solutions/chapter-18.md)
+19. [Chapter 19](/solutions/chapter-19.md)
