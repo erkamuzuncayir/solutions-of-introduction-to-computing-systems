@@ -10,6 +10,7 @@ void swap(bool &x, bool &y) {
 }
 ```
 
+---
 2. Solution:
 
 ```cpp
@@ -20,8 +21,10 @@ void swap(int *x, int *y) {
 }
 ```
 
+---
 3. Version C.
 
+---
 4. Solution:
 
 | Address   | Name  | Type      | Size      |
@@ -29,14 +32,17 @@ void swap(int *x, int *y) {
 | 0xFF10    | t1    | Triangle  | 24 byte   |
 | 0xFF28    | p     | double    | 8 byte    |
 
+---
 5. Solution:
 
 ```cpp
 double Triangle::height() { return (2 * area()) / sideC; }
 ```
 
+---
 6. It won't compile because Triangle's methods will be out of scope of `main()`.
 
+---
 7. Solution:
 
 ```cpp
@@ -167,6 +173,7 @@ int DeleteFlight(char *planeID, Flight **list) {
 }
 ```
 
+---
 8. Solution:
 
 ```cpp
@@ -205,6 +212,7 @@ int main(void) {
 }
 ```
 
+---
 9. Solution:
 
 ```cpp
@@ -236,6 +244,7 @@ int main(void) {
 }
 ```
 
+---
 10. Solution:
 
 ```assembly
@@ -250,12 +259,16 @@ TWO_VALUE .FILL x0002
 THREE_VALUE .FILL x0003
 ```
 
+---
 11. It is allocated in heap.
 
+| x | y |
+| - | - |
 | intVector[0] | 1 |
 | intVector[1] | 2 |
 | intVector[2] | 3 |
 
+---
 12. Solution:
 
 ```cpp
@@ -274,6 +287,7 @@ int main(void) {
 }
 ```
 
+---
 13. Solution:
 
 ```cpp
@@ -376,5 +390,6 @@ void PrintUniqueWords(std::vector<std::vector<char>> &inputVector,
   std::cout << std::endl;
 }
 ```
+---
 
-> If you've made it this far [Press F](https://en.wikipedia.org/wiki/Press_F_to_pay_respects#/media/File:PressFtoPayRespects.jpg)
+> If you've made it this far, [Press F](https://en.wikipedia.org/wiki/Press_F_to_pay_respects#/media/File:PressFtoPayRespects.jpg).

@@ -9,12 +9,16 @@
     6. 2^n
     7. No it is for 'X' or 'V' mark.
 
+---
 2. No, it doesn't. With each recursive call, another copy of the function is pushed into the stack frame.
 
+---
 3. Total number of squares - 1.
 
+---
 4. 1 2 3 4 5 6 7 8 9 10 11.
 
+---
 5. Solution:
     1. 0, 2, 0.
     2. It calculates how many times the 1st number is the 2nd number.
@@ -25,8 +29,8 @@
         4. 7 (argument)
         5. return value
 
+---
 6. Solution:
-
     1. Solution: 
 ```c
 int SigmaIterative(int k) {
@@ -40,12 +44,14 @@ int SigmaIterative(int k) {
 }
 ```
 
-    2. Solution: 80.
-    
+2.Solution: 80.
+
+---
 7. Solution:
     1. 16 KB = 16384 Byte / 4 Byte (1 for frame pointer, 1 for return address, 1 for return value, 1 for argument = 4096
     2. 4 KB = 4096 Byte / 4 Byte (1 for frame pointer, 1 for return address, 1 for return value, 1 for argument = 1024
 
+---
 8. Solution: Because the recursive implementation needs many extra calls compared to the iterative implementation.
 
 ```c
@@ -70,10 +76,13 @@ int Fib(int k) {
 }
 ```
 
+---
 9. Solution: Just convert `else if (item < list[middle])` to `else if (item > list[middle])`.
 
+---
 10. Solution: 3, 2, 2. Find the greatest divisor that can divide both numbers. We should probably test every number that is smaller than the smaller of the two numbers.
 
+---
 11. Solution:
 
 ```c
@@ -90,13 +99,16 @@ int M() {
 }
 ```
 
+---
 12. Solution:
-  1. None.
-  2. 6.
-  3. Recursive call count.
-  
+    1. None.
+    2. 6.
+    3. Recursive call count.
+
+---
 13. Solution: Can't solve.
 
+---
 14. Solution:
 
 ```

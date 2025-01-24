@@ -26,6 +26,7 @@ int main() {
 }
 ```
 
+---
 2. Solution:
 
 ```c
@@ -47,8 +48,10 @@ int main() {
 }
 ```
 
+---
 3. Solution: `x = 7`. Because `*px` is pointer of global variable `x`.
 
+---
 4. Solution:
 
 ```c
@@ -96,6 +99,7 @@ int StringCompare(char firstString[], char secondString[]) {
 }
 ```
 
+---
 5. Solution:
 
 ```c
@@ -114,6 +118,7 @@ void InsertionSort(int list[]) {
 }
 ```
 
+---
 6. Solution:
 
 ```assembly
@@ -129,6 +134,7 @@ DONE    HALT
 ARR_A   .BLKW 5
 ```
 
+---
 7. Solution:
 
 | MemAddr | What contains       | Value  |
@@ -140,8 +146,10 @@ ARR_A   .BLKW 5
 | 0xEFF5 | saved return address | ------ |
 | 0xEFF6 | return value         | ------ |
 
+---
 8. Solution: Stack has 4 elements. One for parameter, one for main's frame pointer, one for return address and one for return value to main.
 
+---
 9. Solution:
 
 ```c
@@ -178,6 +186,7 @@ int main(void) {
 }
 ```
 
+---
 10. Solution:
 
 ```c
@@ -220,15 +229,18 @@ void InsertionSort(int list[]) {
 }
 ```
 
+---
 11. Solution:
-  1. a. 
-    1. main: Stack has 13 elements. One for frame pointer, one for return address and one for return value, 13 for local variable.
-    2. FindLen: Stack has 5 elements. One for parameter, one for main's frame pointer, one for return address and one for return value to main, one for local variable. 
-  2. b. I skipped this.
-  3. c. It cause stack overflow and override main's frame pointer, return address and return value and cause unknown behaviour.
+    1. a.
+        1. main: Stack has 13 elements. One for frame pointer, one for return address and one for return value, 13 for local variable.
+        2. FindLen: Stack has 5 elements. One for parameter, one for main's frame pointer, one for return address and one for return value to main, one for local variable. 
+    2. b. I skipped this.
+    3. c. It cause stack overflow and override main's frame pointer, return address and return value and cause unknown behaviour.
 
+---
 12. Solution: It returns memory address of local variable of function `*LowerCase` which meaning is when function returned, value of return is `NULL` because stack cleaned from `*LowerCase` when returned.
 
+---
 13. Solution:
 
 ```c
@@ -283,6 +295,7 @@ int Pop(int *pItem) {
     return 1;
 }
 ```
+---
 14. Solution:
 
 ```c
@@ -320,19 +333,3 @@ void CollectHistogramDataFromSources(int image[WIDTH_PIXEL][HEIGHT_PIXEL],
   }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,9 +9,10 @@
 | result     | int  | -2       | main  |
 | operation  | char | -3       | main  |
 
+---
 2. Solution:
 
-a. 
+	1. a.
 
 ```c
 if (VERO)
@@ -20,10 +21,10 @@ else
     printf("False!");
 ```
 
-b. Prints true.
+2. b. Prints true.
+3. c. Doesn't change because when first condition is satisfied processor exits if-else block.
 
-c. Doesn't change because when first condition is satisfied processor exits if-else block.
-
+---
 3. Solution:
 
 ```c
@@ -33,26 +34,25 @@ else
     x = c;
 ```
 
+---
 4. Solution:
 
-a.
-    4. 1. 1. x = 1: `printf("x does not equal 0\n");`
-    4. 1. 2. x = 0: `printf("x equals 0\n");`
+	1. a.
+		1. 1. 1. x = 1: `printf("x does not equal 0\n");`
+		2. 1. 2. x = 0: `printf("x equals 0\n");`
+	2. b.
+		1. 2. 1. x = 1: `printf("x does not equal 0\n");`
+		2. 2. 2. x = 0: `printf("x equals 0\n");`
+	3. c.
+		1. 3. 1. x = 1: `A`
+		2. 3. 2. x = 0: `D`
+	4. d.
+		1. 4. 1. x = 1: `4`
+		2. 4. 2. x = 0: `4`
 
-b.
-    4. 2. 1. x = 1: `printf("x does not equal 0\n");`
-    4. 2. 2. x = 0: `printf("x equals 0\n");`
+	5. e. Default condition'll satisfied and `y` will be 5.
 
-c.
-    4. 3. 1. x = 1: `A`
-    4. 3. 2. x = 0: `D`
-
-d.
-    4. 4. 1. x = 1: `4`
-    4. 4. 2. x = 0: `4`
-
-e. Default condition'll satisfied and `y` will be 5.
-
+---
 5. Solution:
 
 ```assembly
@@ -81,9 +81,10 @@ CASE_DEF        AND R3, R3, #0
 DONE            HALT
 ```
 
+---
 6. Solution:
 
-b. Program:
+	2. b. Program:
 
 ```c
 #include <stdio.h>
@@ -110,26 +111,25 @@ int main()
 }
 ```
 
+---
 7. No, due to not using literal in comparison `else if (x == y)` statement can't convert to a switch condition.
 
+---
 8. Solution:
 
-a. 0.
+	1. 0.
+	2. 1.
+	3. 0.
+	4. 1.
 
-b. 1.
-
-c. 0.
-
-d. 1.
-
+---
 9. Solution:
 
-a. 0.
+	1. 0.
+	2. 0.
+	3. 11 4.
 
-b. 0.
-
-c. 11 4.
-
+---
 10. Solution:
 
 ```c
@@ -146,6 +146,7 @@ switch(isLess)
 }
 ```
 
+---
 11. Solution:
 
 ```C
@@ -185,14 +186,14 @@ int main()
 		printf("Your e-mail address is not valid!\n");
 }
 ```
-12. 
+---
+12. Solution:
 
-a. False.
+	1. False.
+	2. Because it will cause integer overflow and x will be a negative number and condition will eventually be unsatisfied.
+	3. 4
 
-b. Because it will cause integer overflow and x will be a negative number and condition will eventually be unsatisfied.
-
-c. 4
-
+---
 13. Solution:
 
 ```c
@@ -220,6 +221,7 @@ int main()
 }
 ```
 
+---
 14. Solution: 
 
 ```c
@@ -246,16 +248,17 @@ int main()
 }
 ```
 
+---
 15. Solution:
 
-a.
+	1. a.
 
 ```c
 for(true; condition; true)
     // loopBody;
 ```
 
-b.
+2. b.
 
 ```c
 // init
@@ -270,10 +273,14 @@ while(condition)
 }
 ```
 
+---
 16. sum + 650
 
+---
 17. It counts 1's in binary representation of an integer number.
 
+---
 18. `******` - `**********` - `*****` - `*********`
 
+---
 19. C doesn't allow declaring a variable based on a condition, because it doesn't know if the condition will be satisfied at runtime, because the compiler converts C code to machine code before runtime, so it has to know that this variable will exist. And in `for` loops variable declaration is made before condition is checked, so it is not depend on condition.

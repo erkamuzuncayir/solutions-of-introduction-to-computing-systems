@@ -1,7 +1,9 @@
 # Chapter 06
+
 1. Yes, an algorithm is defined a step by step procedure that will terminate eventually. We can create a procedure that doesn't end with 3 basic constructs and won't be a algorithm. Here it is;
 	1. x3000: AND R0 R0 #0
 	2. x3001: BRZ #-1
+---
 2. Solution:
 	1. a.
 		1. Start
@@ -23,6 +25,7 @@
 			2. ADD R1 R1 #1
 			3. ADD R2 R1 R0
 		4. Stop
+---
 3. Solution: De Morgan's Law = (NOT A) AND (NOT B) = A OR B
 	1. x3000: LDI R0 NEW_BUSY
 	2. x3001: LDI R1 BUSY_MACHINES
@@ -33,6 +36,7 @@
 	7. x3006: NOT R3 R2
 	8. x3007: AND R4 R3 R2
 	9. x3008: STI R4 BUSY_MACHINES
+---
 4. Solution:
 	1. LDI R1 SEC_NUM
 	2. LDI R2 FRS_NUM
@@ -50,7 +54,9 @@
 	14. BRnzp HALT
 	15. ADD R0 R0 #-1
 	16. HALT
+---
 5. 88 * 3. Because it needs less operation count.
+---
 6. Solution:
 	1. First
 		1. Start
@@ -104,8 +110,11 @@
 			24. BRnzp [RESULT]
 			25. [RESULT] (Result is R7)
 		4. Exit
+---
 7. It sums correspending elements of specific lengthed two list (i guess) and store them.
+---
 8. R2 might be populated previously and result might be uncorrect due to this.
+---
 9. Solution:
 	1. AND R0 R0 #0
 	2. LD R0 [SOMEADDRESSHAVE100]
@@ -113,10 +122,12 @@
 	4. ADD R0 R0 #-1
 	5. BRzp [ITERATIVE_START]
 	6. HALT
+---
 10. Solution:
 	1. AND R0 R2 #1
 	2. BRz [RESULT_EVEN]
 	3. BRnp [RESULT_ODD]
+---
 11. Solution:
 	1. AND R0 R0 #0
 	2. AND R1 R1 #0
@@ -132,6 +143,7 @@
 	12. ADD R0 R0 #1
 	13. BRnzp [LOOP_START]
 	14. [DONE] HALT
+---
 12. Solution:
 	1. a.
 		1. TRAP GET_INPUT
@@ -140,6 +152,7 @@
 		1. TRAP GET_INPUT
 		2. ADD INPUT INPUT #-6
 		3. BRz DISPLAY_PREVIOUS_INPUT
+---
 13. Solution:
 	1. AND R0 R0 #0
 	2. AND R1 R1 #0
@@ -149,10 +162,15 @@
 	6. ADD R1 R1 #1
 	7. BRnzp [LOOP_START]
 	8. [DONE] ST R1 x3100
+---
 14. 9,10,11.
+---
 15. STR R2 R4 #7
+---
 16. Can't solve. Some instructions are not taught in the book.
+---
 17. BRnZp #15. I guess?
+---
 18. Solution:
 	1. First
 		1. Initialize
@@ -217,6 +235,7 @@
 			45. STI R4 [ADDRESS_CONTAIN_5001]
 			46. [DONE] TRAP HALT
 		3. Exit
+---
 19. Solution:
 	1. Doesn't load from x4000.
 	2. Doesn't save to x5000
@@ -232,10 +251,13 @@
 	12. ADD R1 R1 #1
 	13. BRnzp [LOOP_START]
 	14. [HALT] TRAP
+---
 20. only the negative number check in exercise 6 should be added to the answer in exercise 18.
+---
 21. Solution:
 	1. x3003: R1 <- R0 - 15
 	2. x3009: R0 <- R0 + 1
+---
 22. Solution:
 	1. x3004: BRz x300D
 	2. x3008: AND R5 R2 R3
@@ -243,6 +265,7 @@
 	4. x300B: ADD R1 R1 #1
 	5. x300D: ADD R5 R5 #1
 	6. If password stored as negative number, instructions at x3007 and x3008 can be removed.
+---
 23. Solution: R0 = A52D, R1 = 1010
     |    PC    |  MAR  |  MDR   |    IR     |    R0    |     R1    |
     | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
@@ -252,8 +275,11 @@
     | x3003 | x3002 | x1261 | x1261 | xB333 | x0001 | 0001 0010 0110 0001 : ADD R1 R1 #1
     | x3004 | x3003 | x1000 | x1000 | x6666 | x0001 | 0001 0000 0000 0000 : ADD R0 R0 R0
     | x3005 | x3004 | x0BFC | x0BFC | x6666 | x0001 | 0000 1011 1111 1100: BRnp #-4
+---
 24. 0110 0000 0100 0001: LDR R0 R1 #1
+---
 25. at this point assembly coding has not yet been taught. but since the operation is done through registers and there is no memory access, the answer will be like this: the answer will result = result + 1 because the necessary bit insertion has not been done.
+---
 26. Solution:
 	1. a.
 	    | Cycle |  State  |  Bus   |    Signals     |
@@ -270,5 +296,7 @@
 		1. x3010 = xA202
 		2. x3013 = x4567
 		3. x4567 = 0
-27. ![Solution](_attachments/Pasted%20image%2020250104210625.png)
+---
+27. Solution:
+	![Solution](_attachments/Pasted%20image%2020250104210625.png)
 

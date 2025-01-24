@@ -1,12 +1,15 @@
 # Chapter 08
 
 1. It works with last-in first-out mechanism. So when you insert an element, it adds to the top of the list, and when you get an element from the list, it gives you the last element you added.
+---
 2. Require way less operation to adding and removing data from stack.
+---
 3. Solution:
    1. POP R7
    2. POP R0
    3. PUSH R1
    4. PUSH R3
+---
 4. Solution:
    1. ST R1 S1
    2. ST R2 S2
@@ -15,6 +18,7 @@
    5. BRz UNDERFLOW
    6. LDR R0 R6 #0
    7. RET
+---
 5. Partial solution:
 
 ```assembly
@@ -63,6 +67,7 @@ Save2   .FILL	x0001
 Save3   .FILL	x0001
 ```
 
+---
 6. Solution:
 
 ```assembly
@@ -75,6 +80,7 @@ POP     LDR R0, R6, #0
         ADD R6, R6, #2
 ```
 
+---
 7. Solution:
 
 ```assembly
@@ -123,20 +129,26 @@ Save2           .FILL   x0000
 Save3           .FILL   x0000
 ```
 
+---
 8. Solution:
    1. F and A.
    2. After PUSH J and PUSH K.
    3. Just M.
+---
 9. Solution:
    1. BDECJKIHLG
    2. PUSH Z, PUSH Y, POP, PUSH X, POP, PUSH W, PUSH V, POP, PUSH U, POP, POP, POP, PUSH T, PUSH S, POP, PUSH R, POP, POP
    3. Number of valid output permutations is determined by the Catalan number for the given input length. The Catalan number 5 is 14.
+---
 10. I couldn't understand how this question works.
+---
 11. Solution:
     1. 16.
     2. x400F
     3. Average of 4 consecutive values in memory.
+---
 12. I couldn't understand how this question works.
+---
 13. Solution:
 
 ```assembly
@@ -157,6 +169,7 @@ DONE    ADD R0,R1,#0 ; Move n! to R0
 SAVE_R1 .BLKW 1
 ```
 
+---
 14. Partial Solution:
     1.  JSR X
     2.  LDR R1, R3, #1
@@ -166,4 +179,5 @@ SAVE_R1 .BLKW 1
     6.  -
     7.  -
     8.  -
+---
 15. This problem would not belong to Chapter 08.

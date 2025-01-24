@@ -10,16 +10,20 @@
 | dd         | char   | -3       | block |
 | zz         | bool   | -4       | block |
 
+---
 2. Solution:
    1. It won't initialize a default value due to local scope.
    2. It will be initialized as a '0' due to `int` type of variable.
+---
 3. Solution:
    1. -2,147,483,648 to 2,147,483,647
    2. 0 to 4,294,967,295
+---
 4. Solution:
    1. 0.00000000111
    2. -2.1
    3. 101.101
+---
 5. Solution:
 
 ```assembly
@@ -37,8 +41,10 @@ STR R0, R5, #-3
 
 ```
 
+---
 6. 2, 2, 3, 3
 
+---
 7. Solution:
    1. 15
    2. 1 or TRUE
@@ -52,12 +58,15 @@ STR R0, R5, #-3
    10. a = 7, b = 8
    11. 10
    12. 3072
+---
 8. Solution:
    1. `(letter >= '0' && letter <= '9' || letter >= 'letter' && letter <= 'Z' || letter >= 'letter' && letter <= 'z')`
    2. `!(letter >= '0' && letter <= '9' || letter >= 'letter' && letter <= 'Z' || letter >= 'letter' && letter <= 'z')`
+---
 9. Solution:
    1. It checks if the letter is lowercase and if it is, it assigns '!' to it, otherwise it assigns itself again.
    2. `letter = ((letter >= 'a' && letter <= 'z') ? letter - 32 : letter);`
+---
 10. Solution:
 
 ```c
@@ -76,6 +85,7 @@ int main()
 }
 ```
 
+---
 11. Solution:
 
     1. i = 2, j = 1. First assign `i` to `j` and then increment `i`.
@@ -84,8 +94,10 @@ int main()
     4. i = 2, j = 0. Increment `i`.
     5. i = 2, j = 2. First increment `i` then assign `i` to `j`.
 
+---
 12. Solution:
 
+---
 13. 1.
 
 ```assembly
@@ -99,6 +111,7 @@ ADD R0, R0, R1
 STR R0, R5, #-2
 ```
 
+---
 12. 2.
 
 ```assembly
@@ -119,8 +132,10 @@ STR R0, R5, #-4
 
 ```
 
+---
 13. All the same except result is 6.
 
+---
 14. Solution:
 
     1. `machineBusy &= ~(1 << 4)`
@@ -143,20 +158,24 @@ int main()
 }
 ```
 
+---
 15. Semicolon terminates statement in C.
 
-16. Solution: w @ x # y $ z U
+---
+16. Solution:
 
     1. `((((w @ x) # y) $ z) U)`
     2. `((w @ (x # y)) ($ (z U)))`
     3. `((((w @ x) # y) $ z) U)`
     4. `(w @ (x # (y $ (z U))))`
 
+---
 17. Solution:
 
     1. It will remain unchanged.
     2. `x = (x + 1)`
 
+---
 18. Solution:
 
 ```c
@@ -175,7 +194,7 @@ int main(void)
 		printf("%c\n", counter);
 }
 ```
-
+---
 19. Solution:
 
 ```c
@@ -200,6 +219,7 @@ int main(void)
 }
 ```
 
+---
 20. Solution
     1. a.
 
@@ -218,8 +238,7 @@ int main(void)
 	printf("x: %d, y: %d", x, y);
 }
 ```
-
-    2. b.
+2. b.
 
 ```c
 #include <stdio.h>

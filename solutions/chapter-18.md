@@ -28,16 +28,22 @@ int main(void) {
 }
 ```
 
+---
 2. It represents how many input successfully processed and assigned to variables.
 
+---
 3. With buffering user can modify their entered input before sending to computer.
 
+---
 4. Program will stop and wait input from user.
 
+---
 5. Because program tries to interpret x as an integer instead of float.
 
+---
 6. Integer values.
 
+---
 7. Solution:
 
 ```
@@ -46,6 +52,7 @@ int main(void) {
 111 999 888
 ```
 
+---
 8. Solution:
 
 ```c
@@ -74,4 +81,5 @@ int main(void) {
 }
 ```
 
+---
 9. Solution: I did not solve it because I found the answer too long to solve but insufficient in terms of benefit.

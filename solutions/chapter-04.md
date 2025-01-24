@@ -41,7 +41,8 @@
 ---
 9. Updating the PC(Program counter). Program counter incremented to point to memory address of next instruction. So at the next cycle the next instruction will be processed.
 ---
-10. ![Solution](_attachments/Pasted%20image%2020241129160151.png)
+10. Solution:
+	![Solution](_attachments/Pasted%20image%2020241129160151.png)
 ---
 11. Solution:
 	1. Fetch: Load the next instruction address from PC to MAR and simultaneously increment PC. After interrogate memory address from MAR and put data into MDR and load IR (instruction register) with this MDR.
@@ -98,9 +99,11 @@
 	2. 0.625 * 10^8
 	3. 5 * 10^8
 ---
-17. ![Solution](_attachments/Pasted%20image%2020241129213750.png)
+17. Solution:
+	![Solution](_attachments/Pasted%20image%2020241129213750.png)
 ---
-18. ![Solution](_attachments/Pasted%20image%2020241129220058.png)
+18. Solution:
+	![Solution](_attachments/Pasted%20image%2020241129220058.png)
 ---
-19. ![Solution](_attachments/Pasted%20image%2020241129220756.png)
----
+19. Solution:
+	![Solution](_attachments/Pasted%20image%2020241129220756.png)

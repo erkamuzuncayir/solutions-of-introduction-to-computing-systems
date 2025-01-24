@@ -2,11 +2,13 @@
 
 1. All programs in written C has to starts from main function.
 
+---
 2. Solution:
     1. It holds start point of local variables of a function.
     2. It holds return address where callee function called in caller method (exact memory address of instruction calls callee), with that it always knows where it'll return.
     3. It holds return value for caller. In this way, data can transfer between functions and functions can make programs more modular.
 
+---
 3. Solution:
     1. Function declaration informs compiler about function so, compiler can create subroutine for based on those information.
     2. Function declaration, sometimes called as function prototype.
@@ -14,36 +16,47 @@
     4. Arguments are inputs that are passed to the function.
     5. Parameter is a value provided by caller function to callee function.
 
+---
 4. Solution:
     1. Caller
     2. Callee.
     3. Callee.
     4. Callee.
 
+---
 5. `2 2`. In C, parameter values are passed to the function, not the parameters themselves. So changes to variables in `MyFunc()` will only make a difference in `MyFunc()` at that call, not anywhere, not at any time.
 
+---
 6. `1 2 6 3 4`
 
+---
 7. Solution:
 
-|               a                 | Local variable / Written by Bump
-| Caller function's frame pointer | Address of caller function / Written by Bump
-|Return address of caller function| Address of an instruction / Written by Bump
-|     Return value for caller     | Address of data / Written by Bump
-|               x                 | Parameter / Argument
+| X | Y |
+| - | - |
+|               a                 | Local variable / Written by Bump |
+| Caller function's frame pointer | Address of caller function / Written by Bump |
+|Return address of caller function| Address of an instruction / Written by Bump |
+|     Return value for caller     | Address of data / Written by Bump |
+|               x                 | Parameter / Argument |
 
+---
 8. Same answer as in exercise 5. Plus, `Swap` doesn't return anything and `main` doesn't set anything to x and y again, so changes in `Swap` stay in `Swap`.
 
+---
 9. First arguments are placed on the stack, then the caller execute JSR instruction. Because parameters (arguments) in caller method, out of scope of callee, so caller must pass parameters before passing control to callee.
 
+---
 10. Solution:
     1. 4.
     2. Can't figured out.
 
+---
 11. Solution:
     1. a = 3 b = 4
     2. Local variables are not initialized. So `z` can have any value, but before `Unit()` is executed, `Init()` is executed, so `z` can have the value of `y`, because the memory address of z is the old memory address of `y`.
 
+---
 12. Solution:
 
 ```c
@@ -85,6 +98,7 @@ char ToLower(char inchar)
 }
 ```
 
+---
 13. Solution:
 
 ```c
@@ -128,6 +142,8 @@ int ConvertBaseFour(int valueBaseTen)
     return valueBaseFour;
 }
 ```
+
+---
 14. Solution:
 
 ```c
@@ -168,22 +184,26 @@ int FindSmallestEvenlyDivisibleNumber(int limit)
 }
 ```
 
+---
 15. Solution:
 
-| 16 | x1
-| dynamic link for main |
-| x3103 | return memory address of main
-| 0 | return value of f
-| 4 | a (arg)
-| 5 | b (arg)
-| 6 | c (arg)
-| 6 | c
-| 5 | b
-| 4 | a
+| X | Y |
+| - | - |
+| 16 | x1 |
+| dynamic link for main | - |
+| x3103 | return memory address of main |
+| 0 | return value of f |
+| 4 | a (arg) |
+| 5 | b (arg) |
+| 6 | c (arg) |
+| 6 | c |
+| 5 | b |
+| 4 | a |
 
+---
 16. Solution:
 
-    1. Code:
+  1.Code:
 
 ```c
 #include <stdio.h>
@@ -210,7 +230,7 @@ int FindBusyMachineCount(int machineState) {
   return count;
 }
 ```
-    2. Code:
+2. Code:
 
 ```c
 #include <stdio.h>
@@ -247,7 +267,7 @@ int DetermineStateChangesOnMachines(int stateBefore, int stateAfter) {
   return stateChanges;
 }
 ```
-    3. Code:
+3. Code:
 
 ```c
 #include <stdio.h>
@@ -311,9 +331,11 @@ int FindBusyMachineCount(int machineState) {
 }
 ```
 
+---
 17. Solution:
 
-    1. Code:
+  1.Code:
+
 ```c
 int Multiplexer(int firstInput, int secondInput, int thirdInput,
                 int fourthInput, int select) {
@@ -336,7 +358,7 @@ int Multiplexer(int firstInput, int secondInput, int thirdInput,
   }
 }
 ```
-    2. Code:
+2. Code:
 ```c
 #define ADD_OPCODE 0
 #define SUB_OPCODE 1
@@ -363,6 +385,7 @@ int ALU(int firstOp, int secondOp, int opcode) {
 }
 ```
 
+---
 18. Solution:
 ```c
 #include <stdio.h>
@@ -429,6 +452,7 @@ int main(void) {
 
 void PrintInput(char ch) { printf("%c\n", ch); }
 ```
+---
 19. Solution:
 
 ```
