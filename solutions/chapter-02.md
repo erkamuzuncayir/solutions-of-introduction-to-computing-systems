@@ -140,7 +140,7 @@
 	1. If the two unsigned number added and leftmost digit of the sum will be 1 this means an overflow occured. Because unsigned numbers are positive and leftmost digit is 0.
 ---
 24. Create two 16-bit unsigned integers such that their sum causes an overflow.
-	1. 0111 1111 1111 1111 + 0000 0000 0000 0001
+	1. 1111 1111 1111 1111 + 0000 0000 0000 0001
 ---
 25. Why does the sum of a negative 2’s complement number and a positive 2’s complement number never generate an overflow?
 	1. When adding a negative and a positive 2's complement number, overflow is not possible because the result will always be within the range of representable values for the given bit width.
