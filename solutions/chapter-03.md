@@ -35,9 +35,10 @@
 6. Solution:
 	1. A B | C D Z
 	2. 0 0   1 1 0
-	3. 0 1   1 1 0
-	4. 1 0   1 1 0
-	5. 1 1   0 0 0
+	3. 0 1   1 0 0
+	4. 1 0   0 1 0
+	5. 1 1   0 0 1
+    Z in terms of A and B is output of logical function AND
 ---
 7. There is ambiguity at output when A = 1 and B = 1. Output voltage is threshold voltage, so it's keep switching.
 ---
