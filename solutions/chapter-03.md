@@ -119,9 +119,9 @@
 	1. The first figure is a *mux*, used to select one of the inputs. The selected output will not be stored.
 	2. The second figure is an *R-S Latch*, used to store the binary value inside. The output will be stored.
 ---
-26. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKABkRtC8QU8eUKACy9+UcCABmAQwA2AZzrVI7EELCFOaUT2zaqEGQqVIVYShTApOkEYXw2RVa7RbnrGbmr0hifby5q1AgsAO4gnrq2EV5CcFAsALK+-kI+xEIiaYEo0CHhXAJihZx4TmFqGlpU6prYZQkAkpWa2ZbWbVQwSPntavElcV0VgwNe9eXhtaVZVZ0szfY80xja0115FG4I1ghWLSBLB87BFdNt0wiZCQWxYzx7LmdCD-sljzcUfhT+q7T+KnCf0cMSikwiayqkWOFWBmR40Phn2BOwRaxeCXM-we-gQ31R4kCIWal2uBKuTigm16SI+5P2gMODlwImBLKaBz0tDe+ipPQWBz4r2sQvE3S2UyqopKorMFgJhDiX2siq6vFO4TxKqV0NVyK8esRis+7zeBuEJvNIgVFsZpNmmkICE0dqqTs0CudCSAA)
+26. [falstad link | Live Circuit](https://tinyurl.com/24k4csuq)
 	1. Solution:
-![Solution](_attachments/Pasted%20image%2020241106165501.png)
+![Solution](https://github.com/user-attachments/assets/88e23e99-0349-474e-b9c9-910be4a35cc0)
 ---
 27. 14 bit address can store 2^14 byte. If the nibble takes half the space of the byte, this memory can store 2^14 * 2 = 2^15 nibbles.
 ---
