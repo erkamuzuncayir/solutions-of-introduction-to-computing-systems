@@ -124,7 +124,7 @@
 	3. 0111 + 0001
 		1. Yes because result should be 0 1000 which is 8 but without 5th byte result will be 1000 which is -8.
 	4. 1000 − 0001
-		1. No.
+		1. Yes because 1000 is '-8', 0001 is '1', the result should be -8 - 1 = -9. To subtract '1' we should represent it as negative '1111' and add to '1000' (-8). 1000 + 1111 = 1 0111 (-9). But without first (5's) bit the answer is positive 7 (0111). So, overflow occurred.
 	5. 0111 + 1001
 		1.  No.
 ---
