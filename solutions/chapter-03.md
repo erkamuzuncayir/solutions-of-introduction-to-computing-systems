@@ -125,16 +125,9 @@
 ---
 27. 14 bit address can store 2^14 byte. If the nibble takes half the space of the byte, this memory can store 2^14 * 2 = 2^15 nibbles.
 ---
-28. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKDDwBYQPCvsEUFQlX6CqrAO7deIbJ25hCs+ZBZSefAcs1iWAGW2yt2QniNioIAGYBDADYBnOtVUGOiwybNyuVKrcdnJFcFJQQOPlMKCMt-eycXfUMEMEEvClTY63igqDVpLhS0+SK89RlwrncwmNV2KorMhGEMi0khES0MNG4OM1UpZtpM7qo+vxYAWRA8PDG+kGJMiP6QFGgENnlR3rMMeRXLdrwPQ9n5-vyBM0Pq3bKKFDNhG48Xh7v3u8OQ74X0n6WAIJYJJfaFGLgkCEFC+IE5RJAA)
+28. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWc0FwCwCY0HYEA4cEMElURTJyBTAWjDACgwy9KxsA2EVkAZg0qVe5ckzLsuE8Jz4CofeQjGUM2DNK6r1-QQspLmQjng19js3cP0MAMuTRoQATi4dIJl-MoAzAIYAbAGcqEUhbe0ceNxMeXT8gkKQwgHcI5y5eAnSoBlTMx0988DB1FL4szww8Dy4yqpqQeuLS3Mbq7LAndU8yzu7JLuac1L7szx7W8a5PehbUhAduIxjBVt5zHnWTWeGzFca1Jd2tI5OdusOeKVjW67YZc9uZHhfV1Nejx7sORx+QP90EHiwVC4TAbn+jnBujYIGBiRydmIrkcyK84DhARBSXCvCIkL4+MBmISoLy+L+ePUj1SaL+aJp4Ahf2hQzKfw5UJKOQAkp9uVcZIIUKI+TNuTMhVARUo+VIdvKpTBSAw+U0duqlTK1vidlTTGUtkMjVJDVk9eaIRdqdyzkLWgzbQhJPaRoMFe7XUy2NzWabWizuSyvUVWaH7cxqVU+OtwNG0Px5OoVZGLDGMnIE6VGooxOoMFgQGh6YXnbpk6J3kI5Hq5L1uTpjbHejJG2BFo3eh2ax3mw7Do3eJBHJ21sO00OR328uZB7HR3l53JePPp2ms400JQN3Ut0XE1htwDbvGD+593NGueNwITMXHGEALKNUsQgu-QsqFAMAAe-2Y9j-LwEAINgRabiAADKv7kFwNCZCAhzwUgqKOAAgjBzAQPBYHgmB8GOKhIAAEIwVg+G8GBGB-AR4GFgAwjBvBoEgOFmOotFEQAIgwABG5CQE44B4FweAAWgYk5JgwgILae5iVRvBCWE0nkA244KXw44qRgMkNhs7BmGBOl6eoG6aTuDCqbJZkvIZODKVZun-M64CDBw+BFjcf6gSYBb6E4qLOUR0F-tgYB+RgEC4JohZEQA8gArgALjBzrCKoJhuEJVQQERADakAAFyQAAumlHDCMxlDZXwCZ0Y4hVFWA5U+R5Rbjhw9AdWBBVgCVrWwShlX-nlHBcH1zWDWofnYEJ2CLFUZkQRhYUYEJzGOAtSDMb1EGkWtvXngthHdURjFrXefzbUWHB7YWPFAA)
 	1. Solution:
-	![Solution](_attachments/Pasted%20image%2020241106171556.png)
-	2. Solution:
-	| S0 | S1 | OUT |
-	   | -  | -  | -  |
-	   | 0  | 0  | LEFT TOP I0 |
-	   | 1  | 0  | LEFT TOP OR BOTTOM I1 |
-	   | 0  | 1  | LEFT BOTTOM I0 |
-	   | 1  | 1  | LEFT BOTTOM I1 |
+	![Solution](https://github.com/user-attachments/assets/aa606455-a95c-4e0f-b210-626712ad189b)
 ---
 29. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAHcQ8qAWbvT2in6R2AikLGEU3KCzAIIXEN2woQmNSrVU1SBHIRqlhbjoxqTVHVAqiNIS+vMUMhWfKrZsbhIR58KPxtdWw57LSddXlkw5wj7bDwZEVi1RJlfTyT3BGxAnjgHOMLrWlFefkz86pTq7jAfIKraqtagv2FRKo6ii3wY3uVCwmcFbQMqEd0JPFVxYXUbfQ4ph37VhGiRAFlOOcN+PBN54Oh9AElIlzcvH1cbGD1RW4po+03klgAZSV9wN0IfysIAAZgBDAA2AGc6NQRD8lAd-idgeDobCkPCxPU3A1lHjUZCYXCWEA)
 	1. Solution:
