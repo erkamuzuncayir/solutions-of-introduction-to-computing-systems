@@ -193,7 +193,7 @@
 	    |   1  |   1  |   0  |   1  | 3 |
 	    |   1  |   0  |   1  |   1  | 6 |
 	    |   1  |   1  |   1  |   1  | 9 |
-	6. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgoqoQFMBaMMAKAA8QmQUAWPEHhBQIIPbmICCAbTABddpxTc8VHlRR5sA8SGmR5HBkrX81A5tt4gAQlP0Ku2DIXMgnxS2NtyWAWRCEGMaEYkGqIVDc0AgsYJRukGLCLmrqCC7q1DFxVLhi2HhiqW6FkUpIMQCS4upBCUl1VDAVLNW8uYT8eW6dkc0UsfE82EojtM5uaGVZLADuAnDc6QIjSxlzK0rJm-VQG8UFRauHe-PDo73nbtjr893tNY+QG93FD8XP82Aajw8Pz3FyhMeBFAsExJkWndEhQfg8ED9PrtCMsHij1m0zDxiC5Xji+tEBpiqJ0ujDSQSWjldiJjItadNaINcuS6sUwYyBmdjpdjqUkWBgfj3vikX86mAeA0lAK4WZvqZRRsFQJ8YKUkqvlLuBLtQj+AK9XLaIjlYQOvwHjcDWaLeBzQFlgKHejHq6xVjFuqFk1lcCvRMKQLA3hLWYg8ydghiECXNGZdxIjEzvTvlG00irgysxNM6tzaZ8419kW6STi-MEBMxhRgXxTrW4zHGwIVHsADLgY0BJJmKgQABmAEMADYAZzo1Gencl0p7OoTVGH48nSGn9rtEWtfRAy4nU5YM-9JKKi37u9H+7XLCAA)
+	6. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgwEI8xDbeQPPgho0oIFNQQdKIQgj40B84aPGSk0gDJyaVJX0J6Q2BJMkQAZgEMANgGcG1SGx2EMkg3I8mzE8CA2Dk5ILjp4cPx8EVSm5uJBjs6ugtieAnhpvvFUiSFQMlQ4qmLFcnh46lJsALIgZYQV9dh8HlTm0NIAHhSkJmCSRhDYnLQSYgCCANpgALpsPYSEkiOSGJBiI0hiKGIAQjPzPRhG-ZIRfFtjuyDTkEeCYOQj9HgIxP2K4yAH9wv1YEqJwgJyKpx2YgAmlM-gB3OQKChqNpIsQueFCVH1PwiNFsIA)
 	   ![Solution](_attachments/Pasted%20image%2020241116001323.png)
 ---
 35. Old value can't be recovered when overwrite on it.
