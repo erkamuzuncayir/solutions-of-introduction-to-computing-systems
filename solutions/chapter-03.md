@@ -176,25 +176,9 @@
 	2. 11 = 3
 	3. 3 (11) x 3 (11) = 9
 	4. 4 bit requires for representing 9 in binary (1001).
-	5. | A\[1] | A\[0] | B\[1] | B\[0] | Y |
-	    |   0  |   0  |   0  |   0  | 0 |
-	    |   1  |   0  |   0  |   0  | 0 |
-	    |   0  |   1  |   0  |   0  | 0 |
-	    |   0  |   0  |   1  |   0  | 0 |
-	    |   0  |   0  |   0  |   1  | 0 |
-	    |   1  |   1  |   0  |   0  | 0 |
-	    |   0  |   1  |   1  |   0  | 2 |
-	    |   0  |   0  |   1  |   1  | 0 |
-	    |   1  |   0  |   1  |   0  | 4 |
-	    |   0  |   1  |   0  |   1  | 1 |
-	    |   1  |   0  |   0  |   1  | 2 |
-	    |   1  |   1  |   1  |   0  | 6 |
-	    |   0  |   1  |   1  |   1  | 3 |
-	    |   1  |   1  |   0  |   1  | 3 |
-	    |   1  |   0  |   1  |   1  | 6 |
-	    |   1  |   1  |   1  |   1  | 9 |
+	5. ![Solution](_attachments/3.34%20Y%5B2%5D%20table.png)
 	6. [falstad link | Live Circuit](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgwEI8xDbeQPPgho0oIFNQQdKIQgj40B84aPGSk0gDJyaVJX0J6Q2BJMkQAZgEMANgGcG1SGx2EMkg3I8mzE8CA2Dk5ILjp4cPx8EVSm5uJBjs6ugtieAnhpvvFUiSFQMlQ4qmLFcnh46lJsALIgZYQV9dh8HlTm0NIAHhSkJmCSRhDYnLQSYgCCANpgALpsPYSEkiOSGJBiI0hiKGIAQjPzPRhG-ZIRfFtjuyDTkEeCYOQj9HgIxP2K4yAH9wv1YEqJwgJyKpx2YgAmlM-gB3OQKChqNpIsQueFCVH1PwiNFsIA)
-	   ![Solution](_attachments/Pasted%20image%2020241116001323.png)
+	   ![Solution](_attachments/3.34%20Y%5B2%5D%20multiplier.png)
 ---
 35. Old value can't be recovered when overwrite on it.
 ---
