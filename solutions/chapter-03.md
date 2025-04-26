@@ -297,3 +297,4 @@
 ![Solution](_attachments/Pasted%20image%2020241120230432.png)
 ---
 62. Solution:
+![Solution](_attachments/3.62%20FSM%20.png)
