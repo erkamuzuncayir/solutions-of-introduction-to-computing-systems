@@ -296,4 +296,4 @@
 	2. Solution:
 ![Solution](_attachments/Pasted%20image%2020241120230432.png)
 ---
-62. *This exercise requires a lot of energy, but gives very little. That's why I didn't try it.*
+62. Solution:
