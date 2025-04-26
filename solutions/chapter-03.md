@@ -280,7 +280,8 @@
 ![Solution](_attachments/Pasted%20image%2020241120211432.png)
 ---
 58. Solution:
-![Solution](_attachments/Pasted%20image%2020241120213447.png)
+![Solution]()
+You can see instructive discussion about this exercise here [forum.allaboutcircuits.com](https://forum.allaboutcircuits.com/threads/gates-of-the-transistors-and-the-truth-table.206291/#post-1978260)
 ---
 59. Solution:
 ![Solution](_attachments/Pasted%20image%2020241120214409.png)
