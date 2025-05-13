@@ -132,7 +132,7 @@
 	1. BRp #2
 	2. Skip
 	3. Skip
-	4. AND R0 R0 #2
+	4. AND R0 R0 #0
 	5. ADD R0 -1
 	6. RESULT: N=1, Z=0, P=0
 ---
