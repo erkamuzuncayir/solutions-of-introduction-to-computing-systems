@@ -99,7 +99,7 @@
 25. Solution:
     NOT R4 R3
     ADD R4 R4 #1
-    ADD R5 R4 R2
+    ADD R1 R4 R2
     BRZ ZERO (101)
     BRN R3 (1)
     BRP R2 (10)
