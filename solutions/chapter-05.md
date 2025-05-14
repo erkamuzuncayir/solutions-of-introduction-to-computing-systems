@@ -136,7 +136,7 @@
 	5. ADD R0 -1
 	6. RESULT: N=1, Z=0, P=0
 ---
-33. R5 is 1.
+33. R5 is 0000 0000 0001 1111.
 ---
 34. NOT
      ![Solution](_attachments/Pasted%20image%2020241229181429.png)
