@@ -139,18 +139,18 @@
 33. R5 is 0000 0000 0001 1111.
     ![Solution](_attachments/5.33%20R5%20bits.jpg)
     Behavior of the loop (x3002–x3008):
-1.	R6 Doubling Sequence:
+	R6 Doubling Sequence:
 o	Starts at 0000 0000 0000 0001 (1).
 o	Each iteration:
 	x3005: R6 ← R6 + R6 (left-shift by 1 → 0000 0000 0000 0010, 0000 0000 0000 0100, etc.).
-2.	R0 Increment:
+	R0 Increment:
 o	Begins at x0000, increments by 1 at x3004 (ADD R0, R0, #1) when the AND result is non-zero.
-3.	Branch Condition (x3003):
+	Branch Condition (x3003):
 o	Branches to x3005 only when R5 AND R6 = 0.
 o	This occurs when R6’s set bit (e.g., 0010 0000) does not overlap with R5’s bits.
 	If R5 = 0000 0000 0001 1111 (31), the AND yields zero only when R6 =0000 0000 0010 0000 (32).
 	Thus, R0 increments only 5 times (for R6 = 1, 2, 4, 8, 16), stopping when R6 = 32 (since AND results in zero, skipping x3004).
-4.	Later Iterations:
+	Later Iterations:
 o	For R6 = 0100 0000 (64), 1000 0000 (128), etc., R5 AND R6 remains zero (no further R0 increments).
 ________________________________________
 Key Conclusions
