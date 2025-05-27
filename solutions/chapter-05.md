@@ -168,9 +168,9 @@
 ---
 44. Solution:
 	1. a.
-		1. x3001: 0000 001 0 0010 0111
-		2. x3002: 0000 100 0 0100 1110
-	2. Program never halts, it just endless setting 0 to R0 and increment one loop.
+		1. x3001: 0000 001 0 0011 1110  Offset9 = 000111110 = +62 → jumps to x3001+1+62 = x3040
+		2. x3002: 0000 100 0 0111 1101  Offset9 = 001111101 = +125 → jumps to x3002+1+125 = x3080
+	2. Program halts when R0 = x8000 = 1000 0000 0000 0000 which will be considered negative by BR instruction at x3002.
 ---
 45. PC put contents to MAR because it is how instruction loaded into LC-3. In this way we know which data where read or stored with, which operation. Microarchitecture increment PC to pointing to next instruction to read next instruction at next cycle.
 ---
