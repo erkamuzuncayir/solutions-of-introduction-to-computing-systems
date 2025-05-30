@@ -194,7 +194,7 @@
 53. Solution:
 	![Solution](_attachments/Pasted%20image%2020241230145543.png)
 ---
-54. TRAP, 0000.
+54. TRAP, 1111.
 ---
 55. Can't solve.
 ---
