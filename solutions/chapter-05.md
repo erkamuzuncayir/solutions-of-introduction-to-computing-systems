@@ -177,8 +177,8 @@
 46. Instruction is ADD, R0, R0, R1. So, R1 should contain enough value to get lowercase version of R0. In ASCII 'a' has 97 and 'A' has 65. So R1 should contain offset value of 32 which is 0000 0000 0010 0000.
 ---
 47. Solution:
-a.
-b.
+a. ![Solution](_attachments/5.47a%20memory.png)
+b. ![Solution](_attachments/5.47b%20memory.png)
 ---
 48. If R0 contains zero or positive value which sums of R1 and R2.
 ---
