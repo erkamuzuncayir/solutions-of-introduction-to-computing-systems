@@ -298,5 +298,5 @@
 		3. x4567 = 0
 ---
 27. Solution:
-	![Solution](_attachments/Pasted%20image%2020250104210625.png)
+	![Solution](_attachments/5.55%20program%20memory%202.png)
 
