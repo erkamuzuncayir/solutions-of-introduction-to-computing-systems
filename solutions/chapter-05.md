@@ -213,7 +213,7 @@
 60. Solution:
 	1. ALL
 	2. None of what I've seen so far.
-	3. ADD, AND, NOT, LD, LDI, LDR,
+	3. ADD, AND, NOT, LD, LDI, LDR.
 	4. It indicates result of ADD operation occur overflow.
 ---
 61. Didn't try to solve.
