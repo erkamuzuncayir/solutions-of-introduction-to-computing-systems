@@ -45,7 +45,7 @@
 	x400F: 0011 110 111110001    ; ST R6, x4001
 	x4010: 1111 0000 00100101    ; TRAP, x25
 Assembly: 
-![Solution]()
+![Solution](_attachments/6.3%20busyness.png)
 ---
 4. Solution:
 	1. LDI R1 SEC_NUM
