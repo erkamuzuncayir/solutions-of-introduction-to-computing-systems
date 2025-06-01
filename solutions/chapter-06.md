@@ -27,8 +27,8 @@
 		4. Stop
 ---
 3. Solution: 
-	1.	x4000: .FILL x0005	     ; Machine ID
-	2.	x4001: .FILL x3101	     ; Busy bitmask 
+	.	x4000: .FILL x0005	     ; Machine ID
+	-	x4001: .FILL x3101	     ; Busy bitmask 
 	3.	x4002: 0101 000 000 1 00000  ; AND R0, #0
 	4.	x4003: 0001 000 000 1 00001  ; ADD R0, #1
 	5.	x4004: 0010 110 111111100    ; LD R6, x4001
