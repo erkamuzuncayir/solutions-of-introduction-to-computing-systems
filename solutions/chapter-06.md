@@ -44,8 +44,8 @@
 	4. NOT R4 R2
 	5. ADD R4 R4 #1
 	6. ADD R5 R1 R4
-	7. BRn #5
-	8. BRp #2
+	7. BRn #4
+	8. BRp #1
 	9. BRnzp HALT
 	10. ADD R0 R0 #1
 	11. BRnzp HALT
