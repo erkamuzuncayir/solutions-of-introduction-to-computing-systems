@@ -41,19 +41,16 @@
 	1. LDI R1 SEC_NUM
 	2. LDI R2 FRS_NUM
 	3. AND R0 R0 #0
-	4. AND R4 R4 #0
-	5. AND R5 R5 #0
-	6. NOT R4 R2
-	7. ADD R4 R4 #1
-	8. ADD R5 R1 R4
-	9. BRn #4
-	10. BRp #1
-	11. ADD R0 R0 #0
-	12. BRnzp HALT
-	13. ADD R0 R0 #1
-	14. BRnzp HALT
-	15. ADD R0 R0 #-1
-	16. HALT
+	4. NOT R4 R2
+	5. ADD R4 R4 #1
+	6. ADD R5 R1 R4
+	7. BRn #4
+	8. BRp #1
+	9. BRnzp HALT
+	10. ADD R0 R0 #1
+	11. BRnzp HALT
+	12. ADD R0 R0 #-1
+	13. HALT
 ---
 5. 88 * 3. Because it needs less operation count.
 ---
