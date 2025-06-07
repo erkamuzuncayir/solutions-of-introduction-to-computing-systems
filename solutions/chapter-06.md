@@ -63,59 +63,59 @@
 	2. Assembler code in image:
 ![Solution](_attachments/6.6.%20asm%20code.png)
 	3. Actual assembler code:
- 	1. 		AND R3, R3, #0
-        2. 		ADD R6, R0, #0
-        3.		ADD R7, R1, #0
-        4.		AND R4, R7, #-1
-        5.		BRz DONE
-        6.		AND R4, R6, #-1
-        7.		BRz DONE
-        8.		BRn NEG1
-        9.		AND R4, R7, #-1
-        10.		BRp POS2
-        11.		NOT R7, R7
-        12.		ADD R7, R7, #1
-        13.		BRnzp NMULT
-	14.		NEG1    NOT R6, R6
-        15.		ADD R6, R6, #1
-        16.		AND R4, R7, #-1
-        17.		BRn POS1
-	18.	NMULT   NOT R2, R6
-        19.		ADD R2, R2, #1
-        20.		ADD R4, R7, R2
-        21.		BRn COUNT1
-        22.		ADD R5, R6, #0
-	23.	LOOP1   ADD R3, R3, R7
-        24.		ADD R5, R5, #-1
-        25.		BRp LOOP1
-        26.		NOT R3, R3
-        27.		ADD R3, R3, #1
-        28.		BRnzp DONE
-	29.	COUNT1  ADD R5, R7, #0
-	30.	LOOP2   ADD R3, R3, R6
-        31.		ADD R5, R5, #-1
-        32.		BRp LOOP2
-        33.		NOT R3, R3
-        34.		ADD R3, R3, #1
-        35.		BRnzp DONE
-	36.	POS1    NOT R7, R7
-        37.		ADD R7, R7, #1
-	38.	POS2    NOT R2, R6
-        39.		ADD R2, R2, #1
-        40.		ADD R4, R7, R2
-        41.		BRn COUNT2
-        42.		ADD R5, R6, #0
-	43.	LOOP3   ADD R3, R3, R7
-        44.		ADD R5, R5, #-1
-        45.		BRp LOOP3
-        46.		BRnzp DONE
-	47.	COUNT2  ADD R5, R7, #0
-	48.	LOOP4   ADD R3, R3, R6
-        49.		ADD R5, R5, #-1
-        50.		BRp LOOP4
-        51.		BRnzp DONE
-	52.	DONE    TRAP x25
-   	53.     .END
+ 		AND R3, R3, #0
+      		ADD R6, R0, #0
+		ADD R7, R1, #0
+		AND R4, R7, #-1
+       		BRz DONE
+       		AND R4, R6, #-1
+		BRz DONE
+       		BRn NEG1
+       		AND R4, R7, #-1
+       		BRp POS2
+       		NOT R7, R7
+       		ADD R7, R7, #1
+       		BRnzp NMULT
+	NEG1    NOT R6, R6
+     		ADD R6, R6, #1
+       		AND R4, R7, #-1
+       		BRn POS1
+	NMULT   NOT R2, R6
+       		ADD R2, R2, #1
+       		ADD R4, R7, R2
+       		BRn COUNT1
+		ADD R5, R6, #0
+	LOOP1   ADD R3, R3, R7
+     		ADD R5, R5, #-1
+       		BRp LOOP1
+       		NOT R3, R3
+       		ADD R3, R3, #1
+       		BRnzp DONE
+	COUNT1  ADD R5, R7, #0
+	LOOP2   ADD R3, R3, R6
+       		ADD R5, R5, #-1
+       		BRp LOOP2
+		NOT R3, R3
+       		ADD R3, R3, #1
+		BRnzp DONE
+	POS1    NOT R7, R7
+       		ADD R7, R7, #1
+	POS2    NOT R2, R6
+       		ADD R2, R2, #1
+       		ADD R4, R7, R2
+       		BRn COUNT2
+       		ADD R5, R6, #0
+	LOOP3   ADD R3, R3, R7
+       		ADD R5, R5, #-1
+       		BRp LOOP3
+       		BRnzp DONE
+	COUNT2  ADD R5, R7, #0
+	LOOP4   ADD R3, R3, R6
+       		ADD R5, R5, #-1
+       		BRp LOOP4
+        		BRnzp DONE
+	DONE    TRAP x25
+     .END
 ---
 7. It sums correspending elements of specific lengthed two list (i guess) and store them.
 ---
