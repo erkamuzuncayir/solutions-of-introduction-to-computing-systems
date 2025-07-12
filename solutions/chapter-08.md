@@ -141,7 +141,7 @@ Save3           .FILL   x0000
    3. Number of valid output permutations is determined by the Catalan number for the given input length. The Catalan number 5 is 14.
 ---
 10. Solution:
-    ![Solution]()
+    ![Solution](_attachments/8.10%20.png)
 ---
 11. Solution:
     1. 16.
