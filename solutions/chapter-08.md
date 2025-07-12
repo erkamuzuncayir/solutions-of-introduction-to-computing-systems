@@ -147,7 +147,145 @@ Save3           .FILL   x0000
     2. x400F
     3. Average of 4 consecutive values in memory.
 ---
-12. I couldn't understand how this question works.
+12. Solution:
+```assembly
+     ;You can verify this code in LC3Tools
+ .ORIG x3000
+    LEA R0, FROM
+    TRAP x22
+    TRAP x20        ; Inputs a char without banner
+    NOT R1, R0
+    ADD R1, R1, #1
+    LEA R0, TO
+    TRAP x22
+    TRAP x20
+    NOT R0, R0
+    ADD R0, R0, #1
+    AND R5, R5, #0
+    LDI R2, HEAD
+SEARCH  BRz DONE
+        LDR R3, R2, #0
+        ADD R7, R1, R3
+        BRz FOUND_FROM
+        LDR R2, R2, #1
+        BRnzp SEARCH
+FOUND_FROM      ADD R2, R2, #2
+NEXT_BRIDGE     LDR R3, R2, #0
+                BRz DONE
+                LDR R4, R3, #0
+                ADD R7, R0, R4
+                BRnp SKIP
+                ADD R5, R5, #1 ; Increment Counter
+SKIP            ADD R2, R2, #1
+                BRnzp NEXT_BRIDGE
+DONE            STI R5, ANSWER
+                HALT
+HEAD    .FILL x3050
+ANSWER  .FILL x4500
+FROM    .STRINGZ "FROM: "
+TO      .STRINGZ "TO: "
+ .END
+    .ORIG x3050
+CITY    .FILL x3100
+    .END
+    .ORIG x3100
+A       .FILL x0041
+        .FILL x3200
+        .FILL x3110
+        .FILL x3120
+        .FILL x3130
+        .FILL x3140
+        .FILL x0000     ;Sentinel value indicating no more bridges          
+    .END
+    .ORIG x3200
+B       .FILL x0042
+        .FILL x3300
+        .FILL x3210
+        .FILL x3220
+        .FILL x3230
+        .FILL x3240
+        .FILL x0000     ;Sentinel value indicating no more bridges
+    .END
+    .ORIG x3300 
+C       .FILL x0043
+        .FILL x3400
+        .FILL x3310
+        .FILL x3320
+        .FILL x3330
+        .FILL x0000     ;Sentinel value indicating no more bridges
+    .END
+    .ORIG x3400 
+D       .FILL x0044
+        .FILL x3500
+        .FILL x3410
+        .FILL x3420
+        .FILL x3430
+        .FILL x3440
+        .FILL x0000     ;Sentinel value indicating no more bridges
+    .END
+    .ORIG x3500 
+E       .FILL x0045
+        .FILL x0000     ;Exit loop if input ≠ A,B,C,D,E (avoid infinite loop)
+        .FILL x3510
+        .FILL x3520
+        .FILL x3530
+        .FILL x0000     ;Sentinel value indicating no more bridges
+    .END
+A_bridges   .ORIG x3110
+                .FILL x0042     ;bridge with B
+            .END
+            .ORIG x3120
+                .FILL x0044     ;bridge with D
+            .END
+            .ORIG x3130
+                .FILL x0045     ;bridge with E
+            .END
+            .ORIG x3140
+                .FILL x0045     ;bridge with E
+            .END
+B_bridges   .ORIG x3210
+                .FILL x0041     ;bridge with A
+            .END
+            .ORIG x3220
+                .FILL x0044     ;bridge with D
+            .END
+            .ORIG x3230
+                .FILL x0043     ;bridge with C
+            .END
+            .ORIG x3240
+                .FILL x0043     ;bridge with C
+            .END        
+C_bridges   .ORIG x3310
+                .FILL x0042     ;bridge with B
+            .END
+            .ORIG x3320
+                .FILL x0042     ;bridge with B
+            .END
+            .ORIG x3330
+                .FILL x0044     ;bridge with D
+            .END
+D_bridges   .ORIG x3410
+                .FILL x0041     ;bridge with A
+            .END
+            .ORIG x3420
+                .FILL x0042     ;bridge with B
+            .END
+            .ORIG x3430
+                .FILL x0043     ;bridge with C
+            .END
+            .ORIG x3440
+                .FILL x0045     ;bridge with E
+            .END  
+E_bridges   .ORIG x3510
+                .FILL x0041     ;bridge with A
+            .END
+            .ORIG x3520
+                .FILL x0041     ;bridge with A
+            .END
+            .ORIG x3530
+                .FILL x0044     ;bridge with D
+            .END
+```
 ---
 13. Solution:
 
