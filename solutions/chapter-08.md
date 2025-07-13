@@ -170,14 +170,44 @@ SAVE_R1 .BLKW 1
 ```
 
 ---
-14. Partial Solution:
-    1.  JSR X
-    2.  LDR R1, R3, #1
-    3.  LDR R2, R4, #1
-    4.  ADD R1, R1, R0
-    5.  STR R0, R5, #1
-    6.  -
-    7.  -
-    8.  -
+14. While both the textbook and errata have some mistakes, this implementation reflects the correct approach:
+```assembly
+    .ORIG x3000
+        LEA R3, NUM1
+        LEA R4, NUM2
+        LEA R5, RESULT
+        LDR R1, R3, #0
+        LDR R2, R4, #0
+        ADD R0, R1, R2
+        STR R0, R5, #0
+        JSR X
+        LDR R1, R3, #1
+        LDR R2, R4, #1
+        ADD R1, R1, R2
+        ADD R0, R0, R1
+        STR R0, R5, #1
+        TRAP x25
+        
+X       ST  R4, SAVER4
+        AND R0, R0, #0
+        AND R4, R1, R2
+        BRn LABEL
+        ADD R1, R1, #0
+        BRn ADDING
+        ADD R2, R2, #0
+        BRn ADDING
+        BR  EXIT
+ADDING  ADD R4, R1, R2
+        BRn EXIT
+LABEL   ADD R0, R0, #1
+EXIT    LD  R4, SAVER4
+        RET
+        
+NUM1    .BLKW 2
+NUM2    .BLKW 2
+RESULT  .BLKW 2
+SAVER4  .BLKW 1
+    .END
+```
 ---
 15. This problem would not belong to Chapter 08.
