@@ -192,7 +192,8 @@
 	![Solution](_attachments/Pasted%20image%2020241230144355.png)
 ---
 53. Solution:
-	![Solution](_attachments/Pasted%20image%2020241230145543.png)
+    
+	![Solution](_attachments/5.53%20reg%20file.png)
 ---
 54. TRAP, 0000.
 ---
