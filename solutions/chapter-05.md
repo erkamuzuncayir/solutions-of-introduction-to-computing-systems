@@ -97,16 +97,7 @@
 24. Largest one is 4030 while sign extended and 4050 while zero extended. Smallest one is 4011 while zero extended.
 ---
 25. Solution:
-    NOT R4 R3
-    ADD R4 R4 #1
-    ADD R5 R4 R2
-    BRZ ZERO (101)
-    BRN R3 (1)
-    BRP R2 (10)
-    ADD R1 R3 #0
-    BRNZP DONE (1)
-    ADD R1 R2 #0
-    HALT DONE
+    ![Solution](_attachments/5.25%20compare%20program.png)
 ---
 26. Solution:
 	1. Can't see any problem.
