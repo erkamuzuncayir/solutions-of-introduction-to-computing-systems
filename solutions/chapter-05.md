@@ -124,7 +124,7 @@
 	1. LDR R0 R1 #0
 	2. MAR <- SR + OFFSET. MDR <- Memory[MAR]. DR <- MDR.
 ---
-30. Both R1 and R2 is 0.
+30. Both R1 and R0 is 0.
 ---
 31. 0001 101 100 000 110
 ---
