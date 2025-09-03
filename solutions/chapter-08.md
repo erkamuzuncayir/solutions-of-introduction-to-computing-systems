@@ -140,7 +140,8 @@ Save3           .FILL   x0000
    2. PUSH Z, PUSH Y, POP, PUSH X, POP, PUSH W, PUSH V, POP, PUSH U, POP, POP, POP, PUSH T, PUSH S, POP, PUSH R, POP, POP
    3. Number of valid output permutations is determined by the Catalan number for the given input length. The Catalan number 5 is 14.
 ---
-10. I couldn't understand how this question works.
+10. Solution:
+    ![Solution](_attachments/8.10%20.png)
 ---
 11. Solution:
     1. 16.
