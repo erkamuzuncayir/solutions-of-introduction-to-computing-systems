@@ -58,58 +58,64 @@
 5. 88 * 3. Because it needs less operation count.
 ---
 6. Solution:
-	1. First
-		1. Start
-		2. Operation
-			1. Multiply two numbers
-		3. Stop
-	2. Second
-		1. Start
-		2. Initialize
-		3. Operation
-			1. Find smaller number
-			2. Sum result with bigger number
-			3. Decrement smaller number by 1
-			4. If smaller number bigger than 0 return to instruction 2 before.
-			5. Else you found the result
-		4. Stop
-	3. Third
-		1. Start
-		2. Initialize
-			1. LDI R1 SEC_NUM
-			2. LDI R2 FRS_NUM
-			3. AND R0 R0 #0
-			4. AND R4 R4 #0
-			5. AND R5 R5 #0 (SMALL_NUM)
-			6. AND R6 R6 #0 (BIG_NUM)
-			7. AND R7 R7 #0 (RESULT)
-		3. Operation
-			1. NOT R4 R2
-			2. ADD R4 R4 #1
-			3. ADD R5 R1 R4
-			4. BRn #7
-			5. BRp #3
-			6. ADD R6 R2 #0
-			7. ADD R5 R1 #0
-			8. BRnzp DETERMINE_IF_SMALLER_POSITIVE
-			9. ADD R6 R1 #0
-			10. ADD R5 R2 #0
-			11. BRnzp DETERMINE_IF_SMALLER_POSITIVE
-			12. ADD R6 R2 #0
-			13. ADD R5 R1 #0
-			14. [DETERMINE_IF_SMALLER_POSITIVE] BRn SMALLER_NEGATIVE_LOOP_START
-			15. BRp SMALLER_POSITIVE_LOOP_START
-			16. BRnzp RESULT (this means if smaller not positive or negative, so smaller is zero so the result is too.)
-			17. [SMALLER_NEGATIVE_LOOP_START] ADD R7 R6 #0
-			18. ADD R5 R5 #1 (increment negative smaller number)
-			19. BRn [SMALLER_NEGATIVE_LOOP_START]
-			20. BRnzp RESULT
-			21. [SMALLER_POSITIVE_LOOP_START] ADD R7 R6 #0
-			22. ADD R5 R5 #-1 (decrement positive smaller number)
-			23. BRp [SMALLER_POSITIVE_LOOP_START]
-			24. BRnzp [RESULT]
-			25. [RESULT] (Result is R7)
-		4. Exit
+	1. Flowchart:
+![Solution](_attachments/6.6%20multiplication.png)
+	2. Assembler code in image:
+![Solution](_attachments/6.6.%20asm%20code.png)
+	3. Actual assembler code:
+		AND R3, R3, #0
+     		ADD R6, R0, #0
+		ADD R7, R1, #0
+		AND R4, R7, #-1
+       		BRz DONE
+      		AND R4, R6, #-1
+		BRz DONE
+       		BRn NEG1
+       		AND R4, R7, #-1
+       		BRp POS2
+      		NOT R7, R7
+       		ADD R7, R7, #1
+      		BRnzp NMULT
+	NEG1    NOT R6, R6
+     		ADD R6, R6, #1
+       		AND R4, R7, #-1
+      		BRn POS1
+	NMULT   NOT R2, R6
+      		ADD R2, R2, #1
+       		ADD R4, R7, R2
+      		BRn COUNT1
+		ADD R5, R6, #0
+	LOOP1   ADD R3, R3, R7
+     		ADD R5, R5, #-1
+      		BRp LOOP1
+      		NOT R3, R3
+      		ADD R3, R3, #1
+       		BRnzp DONE
+	COUNT1  ADD R5, R7, #0
+	LOOP2   ADD R3, R3, R6
+      		ADD R5, R5, #-1
+      		BRp LOOP2
+		NOT R3, R3
+      		ADD R3, R3, #1
+		BRnzp DONE
+	POS1    NOT R7, R7
+      		ADD R7, R7, #1
+	POS2    NOT R2, R6
+      		ADD R2, R2, #1
+      		ADD R4, R7, R2
+      		BRn COUNT2
+      		ADD R5, R6, #0
+	LOOP3   ADD R3, R3, R7
+      		ADD R5, R5, #-1
+      		BRp LOOP3
+      		BRnzp DONE
+	COUNT2  ADD R5, R7, #0
+	LOOP4   ADD R3, R3, R6
+      		ADD R5, R5, #-1
+      		BRp LOOP4
+     		BRnzp DONE
+	DONE    TRAP x25
+    .END
 ---
 7. It sums correspending elements of specific lengthed two list (i guess) and store them.
 ---
