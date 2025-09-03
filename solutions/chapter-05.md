@@ -182,7 +182,7 @@
 ---
 49. If next instruction 010 of NZP met, we can say R0 is the base register.
 ---
-50. BR sends PC, LEA and LD sends DR.
+50. BR sends to PC, LEA sends to DR, LD sends to MAR.
 ---
 51. Solution:
 	1. Solution:
