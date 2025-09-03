@@ -196,7 +196,8 @@
 ---
 54. TRAP, 0000.
 ---
-55. Can't solve.
+55. Solution:
+	![Solution](_attachments/5.55%20program%20memory%202.png)
 ---
 56. Solution:
 	![Solution](_attachments/Pasted%20image%2020241230220118.png)
