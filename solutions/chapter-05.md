@@ -117,8 +117,8 @@
 27. Solution: x3102, x0000, x0005
 ---
 28. Solution:
-	1. LD R1 #2
-	2. STR R0 R1 #0
+    
+![Solution](_attachments/5.28%20STI%20replacement.png)
 ---
 29. Solution:
 	1. LDR R0 R1 #0
