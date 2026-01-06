@@ -226,7 +226,7 @@
 ---
 41. Solution:
 	1. (2^7)-1
-	2. (2^7)-2
+	2. -((2^7)-2)
 ---
 42. Programmer might have treat to result as a character instead of number.
 ---
