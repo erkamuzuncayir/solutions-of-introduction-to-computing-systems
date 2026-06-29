@@ -97,16 +97,20 @@
 24. Largest one is 4030 while sign extended and 4050 while zero extended. Smallest one is 4011 while zero extended.
 ---
 25. Solution:
-    NOT R4 R3
-    ADD R4 R4 #1
-    ADD R5 R4 R2
-    BRZ ZERO (101)
-    BRN R3 (1)
-    BRP R2 (10)
-    ADD R1 R3 #0
-    BRNZP DONE (1)
-    ADD R1 R2 #0
-    HALT DONE
+
+| Label | Binary Instruction | Assembly | Description |
+| --- | --- | --- | --- |
+|  | `1001 100 011 111111` | `NOT R4, R3` | Bitwise NOT of R3 $\rightarrow$ R4 |
+|  | `0001 100 100 1 00001` | `ADD R4, R4, #1` | Two's complement: R4 $\leftarrow$ -R3 + 1 $\rightarrow$ R4 = -R3 |
+|  | `0001 001 100 0 00 010` | `ADD R1, R4, R2` | R1 $\leftarrow$ -R3 + R2 (i.e., R2 - R3) |
+|  | `0000 010 000000101` | `BRz Done` | If R1 == 0 $\rightarrow$ branch to `Done` |
+|  | `0000 100 000000001` | `BRn Reg3` | If R1 < 0 $\rightarrow$ branch to `Reg3` |
+|  | `0000 001 000000010` | `BRp Reg2` | If R1 > 0 $\rightarrow$ branch to `Reg2` |
+| **Reg3:** | `0001 001 011 1 00000` | `ADD R1, R3, #0` | Copy R3 to R1 |
+|  | `0000 111 000000001` | `BRnzp Done` | Unconditional branch to `Done` |
+| **Reg2:** | `0001 001 010 1 00000` | `ADD R1, R2, #0` | Copy R2 to R1 |
+| **Done:** | `1111 0000 0010 0101` | `TRAP x25` | HALT (TRAP x25 halts the program) |
+
 ---
 26. Solution:
 	1. Can't see any problem.
