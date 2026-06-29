@@ -137,27 +137,43 @@
 	6. RESULT: N=1, Z=0, P=0
 ---
 33. R5 is 0000 0000 0001 1111.
-    ![Solution](_attachments/5.33%20R5%20bits.jpg)
-    Behavior of the loop (x3002–x3008):
-	R6 Doubling Sequence:
-•	Starts at 0000 0000 0000 0001 (1).
-•	Each iteration:
-•	x3005: R6 ← R6 + R6 (left-shift by 1 → 0000 0000 0000 0010, 0000 0000 0000 0100, etc.).
-	R0 Increment:
-•	Begins at x0000, increments by 1 at x3004 (ADD R0, R0, #1) when the AND result is non-zero.
-	Branch Condition (x3003):
-•	Branches to x3005 only when R5 AND R6 = 0.
-•	This occurs when R6’s set bit (e.g., 0010 0000) does not overlap with R5’s bits.
-•	If R5 = 0000 0000 0001 1111 (31), the AND yields zero only when R6 =0000 0000 0010 0000 (32).
-•	Thus, R0 increments only 5 times (for R6 = 1, 2, 4, 8, 16), stopping when R6 = 32 (since AND results in zero, skipping x3004).
-	Later Iterations:
-•	For R6 = 0100 0000 (64), 1000 0000 (128), etc., R5 AND R6 remains zero (no further R0 increments).
-________________________________________
-Key Conclusions
-•	Final R0 = 5: Matches the count of non-zero AND results before R6 reaches 0010 0000.
-•	R5 Value: Must be 0001 1111 (31) to ensure:
-•	AND is non-zero for R6 = 1, 2, 4, 8, 16.
-•	AND is zero for R6 ≥ 32.
+
+- Behavior of the loop (x3002–x3008):
+	- R6 Doubling Sequence:
+		- Starts at 0000 0000 0000 0001 (1).
+		- Each iteration:
+			- x3005: R6 ← R6 + R6 (left-shift by 1 → 0000 0000 0000 0010, 0000 0000 0000 0100, etc.).
+	- R0 Increment:
+		- Begins at x0000, increments by 1 at x3004 (ADD R0, R0, #1) when the AND result is non-zero.
+	- Branch Condition (x3003):
+		- Branches to x3005 only when R5 AND R6 = 0.
+		- This occurs when R6’s set bit (e.g., 0010 0000) does not overlap with R5’s bits.
+		- If R5 = 0000 0000 0001 1111 (31), the AND yields zero only when R6 =0000 0000 0010 0000 (32).
+		- Thus, R0 increments only 5 times (for R6 = 1, 2, 4, 8, 16), stopping when R6 = 32 (since AND results in zero, skipping x3004).
+	- Later Iterations:
+		- For R6 = 0100 0000 (64), 1000 0000 (128), etc., R5 AND R6 remains zero (no further R0 increments).
+
+- Key Conclusions
+	- Final R0 = 5: Matches the count of non-zero AND results before R6 reaches 0010 0000.
+	- R5 Value: Must be 0001 1111 (31) to ensure:
+		- AND is non-zero for R6 = 1, 2, 4, 8, 16.
+		- AND is zero for R6 ≥ 32.
+
+
+| Address | Binary | Assembly | Description |
+| --- | --- | --- | --- |
+| **x2FFF** | `0101 0000 0010 0000` | `AND R0, R0, #0` | Clears R0 ( R0 $\leftarrow$ 0 ). |
+| **x3000** | `0101 1111 1110 0000` | `AND R7, R7, #0` | Clears R7 ( R7 $\leftarrow$ 0 ). |
+| **x3001** | `0001 1101 1110 0001` | `ADD R6, R7, #1` | Adds 1 to R7, stores result in R6 ( R6 $\leftarrow$ R7 + 1 ). |
+| **x3002** | `0101 1001 0100 0110` | `AND R4, R5, R6` | Bitwise AND of R5 and R6, stores result in R4 ( R4 $\leftarrow$ R5 AND R6 ). |
+| **x3003** | `0000 0100 0000 0001` | `BRz x3005` | Branches to x3005 if last result was zero. |
+| **x3004** | `0001 0000 0010 0001` | `ADD R0, R0, #1` | Increments R0 by 1 ( R0 $\leftarrow$ R0 + 1 ). |
+| **x3005** | `0001 1101 1000 0110` | `ADD R6, R6, R6` | Doubles R6 ( R6 $\leftarrow$ R6 + R6 ). |
+| **x3006** | `0001 1111 1110 0001` | `ADD R7, R7, #1` | Increments R7 by 1 ( R7 $\leftarrow$ R7 + 1 ). |
+| **x3007** | `0001 0011 1111 1000` | `ADD R1, R7, #-8` | Subtracts 8 from R7, stores result in R1 ( R1 $\leftarrow$ R7 - 8 ). |
+| **x3008** | `0000 1001 1111 1001` | `BRn x3002` | Branches back to x3002 if last result was negative. |
+| **x3009** | `0101 1111 1110 0000` | `AND R7, R7, #0` | Clears R7 again ( R7 $\leftarrow$ 0 ). |
+
 ---
 34. NOT
      ![Solution](_attachments/Pasted%20image%2020241229181429.png)
