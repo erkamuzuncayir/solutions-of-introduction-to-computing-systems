@@ -92,7 +92,380 @@ TESTNUMBER      .FILL   x8000
 ---
 21. It counts negative numbers between x4000 and x400A and stores count at the x5000.
 ---
-22. Not try to solve. It'll take too much time.
+22. Solutin:
+```
+; LC-3 program to convert mnemonic to 4-bit opcode
+        .ORIG x3000
+        ; Prompt user for mnemonic
+            LEA   R0, PROMPT      ; R0 = address of "Enter mnemonic: "
+            TRAP  x22             ; PUTS: print prompt
+            AND   R3, R3, #0      ; reset counter for buffer
+            ADD   R3, R3, #5      ; input shuldn't be more than 5 chars
+        ; Read characters into buffer until Enter (ASCII 10) is pressed
+            LEA   R1, BUFFER      ; R1 = base address of input buffer
+
+READ_LOOP   TRAP  x23             ; IN: read and echo one char into R0
+            LD    R2, CHAR_LF     ; Load ASCII code for line feed (0x0A)
+            NOT   R2, R2
+            ADD   R2, R2, #1      
+            ADD   R2, R2, R0      ; Compare R0 to 0x0A
+            BRz   DONE_READ       ; If equal, end input
+            STR   R0, R1, #0      ; Store character in buffer
+            ADD   R1, R1, #1      ; Increment buffer pointer
+            ADD   R3, R3, #-1     ; decrement counter 
+            BRz      INVALID      ; invalid input if more than 5 chars entered
+            BRnzp    READ_LOOP
+
+            ; Null-terminate the input string
+DONE_READ   AND   R0, R0, #0      ; R0 = 0
+            STR   R0, R1, #0      ; Store null terminator
+            LEA   R4, BUFFER      ; R4 = pointer to buffer start
+
+            ; Compare input to each mnemonic
+            LDR   R0, R4, #0      ; Load first character
+
+            ; Check first letter 'A' (ADD, AND)
+            LD    R2, CHAR_A
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_A          ; If R0=='A', go handle ADD/AND
+
+            ; Check first letter 'B' (BR)
+            LD    R2, CHAR_B
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_B           
+
+            ; Check first letter 'J' (JMP, JSR)
+            LD    R2, CHAR_J
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_J          ; If R0=='J', go handle JMP/JSR
+
+            ; Check first letter 'L' (LD, LDI, LDR, LEA)
+            LD    R2, CHAR_L
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_L          ; If R0=='L', go handle LD/LDI/LDR/LEA
+
+            ; Check first letter 'S' (ST, STI, STR)
+            LD    R2, CHAR_S
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_S          ; If R0=='S', go handle ST/STI/STR
+
+            ; Check first letter 'T' (TRAP)
+            LD    R2, CHAR_T
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_T
+            
+            ; Check first letter 'N' (NOT)
+            LD    R2, CHAR_N
+            NOT   R2, R2
+            ADD   R2, R2, #1
+            ADD   R2, R2, R0
+            BRz   IS_N
+
+            ; If none matched:
+INVALID     LEA   R0, ERRMSG      ; R0 = address of "Invalid mnemonic!"
+            TRAP  x22             ; PUTS: print error message
+            HALT
+            
+        ; Handle 'N' -> NOT
+IS_N    LDR   R1, R4, #1      ; second char (must be 'O')
+        LD    R2, CHAR_O
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   IS_NO
+        BRnzp    ERROR
+IS_NO   LDR   R1, R4, #2      ; third char (must be 'T')
+        LD    R2, CHAR_T
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_NOT
+        BRnzp    ERROR  
+
+; Handle first letter 'A' -> could be ADD or AND
+IS_A    LDR   R1, R4, #1      ; second character
+        LD    R2, CHAR_D
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   IS_AD           ; if 'D', maybe ADD
+        LD    R2, CHAR_N
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   IS_AN           ; if 'N', maybe AND
+        BRnzp    ERROR
+
+IS_AD   LDR   R1, R4, #2      ; third character for ADD
+        LD    R2, CHAR_D
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_ADD
+        BRnzp    ERROR
+
+IS_AN   LDR   R1, R4, #2      ; third character for AND
+        LD    R2, CHAR_D
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_AND
+        BRnzp    ERROR
+
+; Handle 'B' -> BR (branch)
+IS_B    LDR   R1, R4, #1      ; second character for BR
+        LD    R2, CHAR_R
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   B_CHECK_NULL ; If R1=='R', proceed
+        BRnzp    ERROR
+                ; Also check no extra char (BR is 2 letters)
+B_CHECK_NULL    LDR   R1, R4, #2
+                BRz   OUTPUT_BR
+                BRnzp    ERROR
+
+; Handle 'J' -> JMP or JSR
+IS_J    LDR   R1, R4, #1      ; second character
+        LD    R2, CHAR_M
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   J_ATM           ; if 'M', it's JMP
+        LD    R2, CHAR_S
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   J_ATS           ; if 'S', it's JSR
+        BRnzp    ERROR
+
+J_ATM   LDR   R1, R4, #2      ; third character for JMP
+        LD    R2, CHAR_P
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_JMP
+        BRnzp    ERROR
+
+J_ATS   LDR   R1, R4, #2      ; third character for JSR
+        LD    R2, CHAR_R
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_JSR
+        BRnzp    ERROR
+
+; Handle 'L' -> LD, LDI, LDR, LEA
+IS_L    LDR   R1, R4, #1      ; second character
+        LD    R2, CHAR_D
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   L_ATD           ; if 'D', could be LD/LDI/LDR
+        LD    R2, CHAR_E
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   L_ATE           ; if 'E', it's LEA
+        BRnzp    ERROR
+
+L_ATD   LDR   R1, R4, #2      ; third character
+        LD    R2, CHAR_I
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_LDI      ; LDI
+        LD    R2, CHAR_R
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_LDR      ; LDR
+        ; If no third char, it's LD
+        LDR   R2, R4, #2
+        BRz   OUTPUT_LD
+        BRnzp    ERROR
+
+L_ATE   LDR   R1, R4, #2      ; third character for LEA
+        LD    R2, CHAR_A
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_LEA
+        BRnzp    ERROR
+; Handle 'S' -> ST, STI, STR
+IS_S    LDR   R1, R4, #1      ; second character (must be 'T')
+        LD    R2, CHAR_T
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   S_ATT
+        BRnzp    ERROR
+
+S_ATT   LDR   R1, R4, #2      ; third character
+        LD    R2, CHAR_I
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   S_ATI           ; STI
+        LD    R2, CHAR_R
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   S_ATR           ; STR
+        ; If no third char, it's ST
+        LDR   R2, R4, #2
+        BRz   OUTPUT_ST
+        BRnzp    ERROR
+        ; matched 'STI'
+S_ATI   BRnzp    OUTPUT_STI
+        ; matched 'STR'
+S_ATR   BRnzp    OUTPUT_STR
+; Handle 'T' -> TRAP
+IS_T    LDR   R1, R4, #1      ; second char (must be 'R')
+        LD    R2, CHAR_R
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   T_ATR
+        BRnzp    ERROR
+
+T_ATR   LDR   R1, R4, #2      ; third char (must be 'A')
+        LD    R2, CHAR_A
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   T_ATRA
+        BRnzp    ERROR
+
+T_ATRA  LDR   R1, R4, #3      ; fourth char (must be 'P')
+        LD    R2, CHAR_P
+        NOT   R2, R2
+        ADD   R2, R2, #1
+        ADD   R2, R2, R1
+        BRz   OUTPUT_TRAP
+        BRnzp    ERROR
+        
+        ; Print error message if no match
+ERROR   LEA   R0, ERRMSG
+        TRAP  x22
+        BRnzp    HALT_
+        ; Input buffer (max 4 chars + null)
+BUFFER      .BLKW 5
+; Character constants
+CHAR_A      .FILL x0041  ; ASCII 'A'
+CHAR_B      .FILL x0042  ; 'B'
+CHAR_D      .FILL x0044  ; 'D'
+CHAR_E      .FILL x0045  ; 'E'
+CHAR_I      .FILL x0049  ; 'I'
+CHAR_J      .FILL x004A  ; 'J'
+CHAR_L      .FILL x004C  ; 'L'
+CHAR_M      .FILL x004D  ; 'M'
+CHAR_N      .FILL x004E  ; 'N'
+CHAR_O      .FILL x004F  ; 'O'
+CHAR_P      .FILL x0050  ; 'P'
+CHAR_R      .FILL x0052  ; 'R'
+CHAR_S      .FILL x0053  ; 'S'
+CHAR_T      .FILL x0054  ; 'T'
+CHAR_LF     .FILL x000A  ; Line Feed
+CHAR_NULL   .FILL x0000  ; Null terminator
+PROMPT      .STRINGZ "Enter mnemonic: "  ; Prompt string
+ERRMSG      .STRINGZ "Invalid mnemonic!" ; Error message
+; Output routines for each mnemonic
+OUTPUT_ADD  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, ADDSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_AND  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, ANDSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_NOT  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, NOTSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_BR   LEA   R0, BRSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_JMP  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, JMPSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_JSR  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, JSRSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_LD   LEA   R0, LDSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_LDI  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, LDISTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_LDR  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, LDRSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_LEA  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, LEASTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_ST   LEA   R0, STSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_STI  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, STISTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_STR  JSR   NULL_CHECK
+            BRnp    ERROR 
+            LEA   R0, STRSTR
+            TRAP  x22
+            BRnzp    HALT_
+OUTPUT_TRAP
+            LEA   R0, TRAPSTR
+            TRAP  x22
+HALT_       TRAP  x25            ; Halt execution
+NULL_CHECK  LDR   R1, R4, #3     ; Check: is fourth character 0?
+            RET
+; --- Data Section ---
+; Opcode strings (4-bit codes as characters)
+ADDSTR      .STRINGZ "0001"
+ANDSTR      .STRINGZ "0101"
+NOTSTR      .STRINGZ "1001"
+BRSTR       .STRINGZ "0000"
+JMPSTR      .STRINGZ "1100"
+JSRSTR      .STRINGZ "0100"
+LDSTR       .STRINGZ "0010"
+LDISTR      .STRINGZ "1010"
+LDRSTR      .STRINGZ "0110"
+LEASTR      .STRINGZ "1110"
+STSTR       .STRINGZ "0011"
+STISTR      .STRINGZ "1011"
+STRSTR      .STRINGZ "0111"
+TRAPSTR     .STRINGZ "1111"
+        .END
+```
 ---
 23. Solution :
     1. ADD R1 R1 #-1
