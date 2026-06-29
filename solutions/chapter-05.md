@@ -117,8 +117,16 @@
 27. Solution: x3102, x0000, x0005
 ---
 28. Solution:
-	1. LD R1 #2
-	2. STR R0 R1 #0
+    
+| Address | Binary | Assembly | Description |
+| :--- | :--- | :--- | :--- |
+| **x3000** | `0010 0000 0000 0011` | `LD R0, #3` | Load the value `x0048` (now at `x3004`) into R0. |
+| **x3001** | `0010 0010 0000 0011` | `LD R1, #3` | Load the pointer `xF3FF` (now at `x3005`) into R1. |
+| **x3002** | `0111 0000 0100 0000` | `STR R0, R1, #0` | Store R0 into the memory address held in R1. |
+| **x3003** | `1111 0000 0010 0101` | `TRAP x25` | Halt execution. |
+| **x3004** | `0000 0000 0100 1000` | `.FILL x0048` | Original data. |
+| **x3005** | `1111 0011 1111 1111` | `.FILL xF3FF` | Original pointer. |
+
 ---
 29. Solution:
 	1. LDR R0 R1 #0
