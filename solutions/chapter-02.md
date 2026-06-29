@@ -124,7 +124,7 @@
 	3. 0111 + 0001
 		1. Yes because result should be 0 1000 which is 8 but without 5th byte result will be 1000 which is -8.
 	4. 1000 − 0001
-		1. No.
+		1. Yes because 1000 is '-8', 0001 is '1', the result should be -8 - 1 = -9. To subtract '1' we should represent it as negative '1111' and add to '1000' (-8). 1000 + 1111 = 1 0111 (-9). But without first (5's) bit the answer is positive 7 (0111). So, overflow occurred.
 	5. 0111 + 1001
 		1.  No.
 ---
@@ -140,7 +140,7 @@
 	1. If the two unsigned number added and leftmost digit of the sum will be 1 this means an overflow occured. Because unsigned numbers are positive and leftmost digit is 0.
 ---
 24. Create two 16-bit unsigned integers such that their sum causes an overflow.
-	1. 0111 1111 1111 1111 + 0000 0000 0000 0001
+	1. 1111 1111 1111 1111 + 0000 0000 0000 0001
 ---
 25. Why does the sum of a negative 2’s complement number and a positive 2’s complement number never generate an overflow?
 	1. When adding a negative and a positive 2's complement number, overflow is not possible because the result will always be within the range of representable values for the given bit width.
