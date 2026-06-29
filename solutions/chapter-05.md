@@ -246,7 +246,7 @@
     
 	![Solution](_attachments/5.53%20reg%20file.png)
 ---
-54. TRAP, 0000.
+54. TRAP, 1111.
 ---
 55. Can't solve.
 ---
