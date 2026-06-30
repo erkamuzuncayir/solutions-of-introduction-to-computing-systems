@@ -107,203 +107,106 @@ EXIT    TRAP    x25 ; Halt
 
 ---
 22. Solution:
-    1. a.
-
 ```assembly
-        .ORIG   x3000
-        ST	    R0, SR0
-        ST	    R1, SR1
-        ST      R2, SR2
-        AND	    R1,	R0,	#FFFF
-        BRz     NOBUSY
-        BRnzp   BUSY
-NOBUSY  ADD     R2, R2, #1
-BUSY    ST      R2, RESULT
-        RET
-        LD	    R0,	SR0
-        LD	    R1,	SR1
-        LD	    R2,	SR2
-SR0     .FILL   x0000
-SR1     .FILL	x0000
-SR1     .FILL	x0000
-RESULT  .BLKW	1
-        .END
-```
-2. b.
+ .ORIG x3F50
+;All functions return results via R0.
+            JSR NONE_BUSY         ;this code block just for cheking the functions
+            JSR ALL_BUSY
+            JSR BUSY_MACHINES
+            JSR FREE_MACHINES
+            AND R5 R5 #0
+            ADD R5 R5 #5
+            JSR IS_BUSY
+            JSR NOT_BUSY_M
+            HALT
+            
+NONE_BUSY   LD  R1 MACHINES      ; a.
+            AND R2 R2 #0
+            AND R0 R0 #0
+            ADD R2 R2 #1
+            ADD R3 R0 #15
+L1          AND R4 R1 R2
+            BRnp SOME_IS_BUSY
+            ADD R2 R2 R2
+            ADD R3 R3 #-1
+            BRzp L1
+            ADD R0 R0 #1        ;All machines free
+            RET 
+SOME_IS_BUSY    RET
 
-```assembly
-        .ORIG   x3000
-        ST	    R0, SR0
-        ST	    R1, SR1
-        AND     R1, R1, #0
-        ADD	    R0,	R0,	#1
-        BRz     ALLBUSY
-        BRnzp   NOTBUSY
-ALLBUSY ADD     R1, R1, #1
-NOTBUSY ST      R1, RESULT
-        RET
-        LD	    R0,	SR0
-        LD	    R1,	SR1
-SR0     .FILL   x0000
-SR1     .FILL	x0000
-RESULT  .BLKW	1
-        .END
-```
-3. c.
+ALL_BUSY    LD  R1 MACHINES      ; b.
+            AND R2 R2 #0
+            AND R0 R0 #0
+            ADD R2 R2 #1
+            ADD R3 R0 #15
+L2          AND R4 R1 R2 
+            BRz SOME_IS_FREE
+            ADD R2 R2 R2
+            ADD R3 R3 #-1
+            BRzp L2
+            ADD R0 R0 #1        ;All machines busy
+            RET
+SOME_IS_FREE    RET
 
-```assembly
-        .ORIG   x3000
-        ST	    R0, SR0
-        ST	    R1, SR1
-        ST	    R2, SR2
-        ST      R3, SR3
-        ST      R4, SR4
-        AND     R3, R3, #0
-        AND     R4, R4, #0
-        ADD     R4, R4, #16
-        LDR     R0, NUMADDR, #0
-        LD      R1, MASK
-LOOP    AND     R2, R0, R1
-        BRn     BUSY
-        BRnzp   LOOP
-BUSY    ADD     R3, R3, #1
-        ADD     R4, R4, #-1
-        BRz     DONE
-        ADD     R0, R0, R0
-        BRnzp   LOOP
-DONE    ST      R3, RESULT
-        RET
-        LD	    R0,	SR0
-        LD	    R1,	SR1
-        LD	    R2,	SR2
-        LD	    R3,	SR3
-        LD	    R4,	SR4
-SR0     .FILL   x0000
-SR1     .FILL	x0000
-SR2     .FILL	x0000
-SR3     .FILL	x0000
-SR4     .FILL	x0000
-MASK    .FILL   x8000
-NUMADDR .FILL   x4001
-RESULT  .BLKW	1
-        .END
-```
-4. d.
-
-```assembly
-        .ORIG   x3000
-        ST	    R0, SR0
-        ST	    R1, SR1
-        ST	    R2, SR2
-        ST      R3, SR3
-        ST      R4, SR4
-        AND     R3, R3, #0
-        AND     R4, R4, #0
-        ADD     R4, R4, #16
-        LDR     R0, NUMADDR, #0
-        LD      R1, MASK
-LOOP    AND     R2, R0, R1
-        BRzp    FREE
-        BRnzp   LOOP
-FREE    ADD     R3, R3, #1
-        ADD     R4, R4, #-1
-        BRz     DONE
-        ADD     R0, R0, R0
-        BRnzp   LOOP
-DONE    ST      R3, RESULT
-        RET
-        LD	    R0,	SR0
-        LD	    R1,	SR1
-        LD	    R2,	SR2
-        LD	    R3,	SR3
-        LD	    R4,	SR4
-SR0     .FILL   x0000
-SR1     .FILL	x0000
-SR2     .FILL	x0000
-SR3     .FILL	x0000
-SR4     .FILL	x0000
-MASK    .FILL   x8000
-NUMADDR .FILL   x4001
-RESULT  .BLKW	1
-        .END
-```
-5. e.
-
-```assembly
-        .ORIG   x3000
-        ST	    R0, SR0
-        ST	    R1, SR1
-        ST	    R2, SR2
-        ST      R3, SR3
-        ST      R4, SR4
-        AND     R3, R3, #0
-        AND     R4, R4, #0
-        ADD     R4, R4, #16
-        LDR     R0, NUMADDR, #0
-        NOT     R5, R5
-        ADD     R5, R5, #1
-        ADD     R4, R4, R5
-        LD      R1, MASK
-LOOP    ADD     R0, R0, R0
-        ADD     R4, R4, #-1
-        BRz     CHECK
-        BRnzp   LOOP
-CHECK   AND     R2, R0, R1
-        BRn     BUSY
-        BRnzp   DONE
-BUSY    ADD     R3, R3, #1
-DONE    ST      R3, RESULT
-        RET
-        LD	    R0,	SR0
-        LD	    R1,	SR1
-        LD	    R2,	SR2
-        LD	    R3,	SR3
-        LD	    R4,	SR4
-SR0     .FILL   x0000
-SR1     .FILL	x0000
-SR2     .FILL	x0000
-SR3     .FILL	x0000
-SR4     .FILL	x0000
-MASK    .FILL   x8000
-NUMADDR .FILL   x4001
-RESULT  .BLKW	1
-        .END
-```
-6. f
-
-```assembly
-        .ORIG   x3000
-        ST	    R0, SR0
-        ST	    R1, SR1
-        ST	    R2, SR2
-        ST      R3, SR3
-        AND     R3, R3, #0
-        LDR     R0, NUMADDR, #0
-        LD      R1, MASK
-LOOP    ADD     R3, R3, #-1
-        AND     R2, R0, R1
-        BRn     BUSY
-        BRnzp   LOOP
-BUSY    AND     R2, R2, #0
-        ADD     R2, R2, #16
-        ADD     R2, R2, R3
-        BRz     DONE
-        ADD     R0, R0, R0
-        BRnzp   LOOP
-DONE    ST      R2, RESULT
-        RET
-        LD	    R0,	SR0
-        LD	    R1,	SR1
-        LD	    R2,	SR2
-        LD	    R3,	SR3
-SR0     .FILL   x0000
-SR1     .FILL	x0000
-SR2     .FILL	x0000
-SR3     .FILL	x0000
-MASK    .FILL   x8000
-NUMADDR .FILL   x4001
-RESULT  .BLKW	1
-        .END
+BUSY_MACHINES   LD  R1 MACHINES   ; c.
+                AND R2 R2 #0
+                AND R0 R0 #0
+                ADD R2 R2 #1
+                ADD R3 R0 #15
+L3              AND R4 R1 R2
+                BRz SKIP
+                ADD R0 R0 #1
+SKIP            ADD R2 R2 R2
+                ADD R3 R3 #-1
+                BRzp L3
+                RET             ;R0 contains the number of busy machines
+                
+FREE_MACHINES   LD  R1 MACHINES   ; d.
+                AND R2 R2 #0
+                AND R0 R0 #0
+                ADD R2 R2 #1
+                ADD R3 R0 #15
+L4              AND R4 R1 R2
+                BRnp SKIP2
+                ADD R0 R0 #1
+SKIP2           ADD R2 R2 R2
+                ADD R3 R3 #-1
+                BRzp L4
+                RET             ;R0 contains the number of free machines
+                
+IS_BUSY         LD  R1 MACHINES   ; e.
+                AND R2 R2 #0
+                AND R0 R0 #0
+                ADD R2 R2 #1
+                ADD R5 R5 #0
+FIND_MACHINE    BRz CHECK
+                ADD R2 R2 R2
+                ADD R5 R5 #-1
+                BR  FIND_MACHINE
+CHECK           AND R4 R1 R2
+                BRz RETURN1
+                ADD R0 R0 #1
+RETURN1         RET             ;R0 set to 1 if machine R5 is busy
+                
+NOT_BUSY_M  LD  R1 MACHINES     ; f.
+            AND R2 R2 #0
+            AND R0 R0 #0
+            ADD R2 R2 #1
+            ADD R3 R0 #15
+L5          AND R4 R1 R2
+            BRz RETURN2
+            ADD R2 R2 R2
+            ADD R0 R0 #1
+            ADD R3 R3 #-1
+            BRzp L5
+            AND R0 R0 #0
+            ADD R0 R0 #-1
+            RET             ;all machines are busy, return -1
+RETURN2     RET             ;Finds the first free machine, searching from machine #0
+    .END
+    .ORIG x4001
+MACHINES    .FILL xFFDF     ;adjust the bit pattern you want to check
+    .END
 ```
 ---
 23. Solution:
