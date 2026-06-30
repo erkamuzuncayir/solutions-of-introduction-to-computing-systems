@@ -265,7 +265,18 @@ Scheme of each cycle:
 	2. State machine has 5 states, so with using 3 bits we can represent all of them. Need only three variables.
 ---
 57. Solution:
-![Solution](_attachments/Pasted%20image%2020241120211432.png)
+
+| $S[1]$ | $S[0]$ | $X$ | $S'[1]$ | $S'[0]$ | $Z$ | Notes / Why? |
+| --- | --- | --- | --- | --- | --- | --- |
+| **0** | **0** | **0** | **1** | **0** | **0** | Moore property forces $Z=0$ |
+| **0** | **0** | **1** | **1** | **1** | **0** | *Next state (1,1) is given by text* |
+| **0** | **1** | **0** | **0** | **0** | **1** | Moore property forces $Z=1$ |
+| **0** | **1** | **1** | **0** | **1** | **1** | *Output Z=1 is given by text* |
+| **1** | **0** | **0** | **1** | **0** | **0** | *Output Z=0 is given by text* |
+| **1** | **0** | **1** | **0** | **1** | **0** | *Next state (0,1) is given by text* |
+| **1** | **1** | **0** | **0** | **0** | **1** | *Next state (0,0) is given by text* |
+| **1** | **1** | **1** | **0** | **1** | **1** | Moore property forces $Z=1$ |
+
 ---
 58. Solution:
 ![Solution](_attachments/3.58%20transistor%20circuit%20final.png)
